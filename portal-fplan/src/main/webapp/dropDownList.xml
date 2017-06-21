@@ -1,0 +1,14 @@
+<List>
+  <entry>
+    <label>Bebauungspläne</label>
+    <link>http://localhost:8080/portal-bplan/</link>
+  </entry>
+  <entry>
+    <label>Flächennutzungspläne</label>
+    <link>http://localhost:8080/portal-fplan/</link>
+  </entry>
+  <entry>
+    <label>Landschaftspläne</label>
+    <link>http://localhost:8080/portal-lplan/</link>
+  </entry>
+</List> 

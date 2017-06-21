@@ -1,0 +1,3118 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+  <import resource="featureHitsRetrieverBP.xml"/>
+
+  <bean name="bp_plan" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_plan_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpPlan"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_plan_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_plan"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_ber" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_ber_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpBereich"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_ber_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_ber"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+
+  <bean name="bp_xp_pto" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_xp_pto_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverXpPto"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_xp_pto_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_xp_pto"/>
+    <property name="tileWidth" value="2096"/>
+    <property name="tileHeight" value="2096"/>
+  </bean>
+  <bean name="bp_xp_lto" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_xp_lto_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverXpLto"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_xp_lto_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_xp_lto"/>
+    <property name="tileWidth" value="2096"/>
+    <property name="tileHeight" value="2096"/>
+  </bean>
+  <bean name="bp_abgrabungsflsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_abgrabungsflsym_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpAbgrabungsfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_abgrabungsflsym_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_abgrabungsflsym"/>
+    <property name="tileWidth" value="2096"/>
+    <property name="tileHeight" value="2096"/>
+  </bean>
+  <bean name="bp_aufschuettsflsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_aufschuettsflsym_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpAufschuettsfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_aufschuettsflsym_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_aufschuettsflsym"/>
+    <property name="tileWidth" value="2096"/>
+    <property name="tileHeight" value="2096"/>
+  </bean>
+  <bean name="bp_bahnverksym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_bahnverksym_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpBahnVerkehr"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_bahnverksym_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_bahnverksym"/>
+    <property name="tileWidth" value="2096"/>
+    <property name="tileHeight" value="2096"/>
+  </bean>
+  <bean name="bp_baugebteilflsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_baugebteilflsym_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpBauGebTeilFl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_baugebteilflsym_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_baugebteilflsym"/>
+    <property name="tileWidth" value="2096"/>
+    <property name="tileHeight" value="2096"/>
+  </bean>
+  <bean name="bp_besnutzzweckflsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_besnutzzweckflsym_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpBesnutzzweckfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_besnutzzweckflsym_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_besnutzzweckflsym"/>
+    <property name="tileWidth" value="2096"/>
+    <property name="tileHeight" value="2096"/>
+  </bean>
+  <bean name="bp_bsflsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_bsflsym_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpBsfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_bsflsym_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_bsflsym"/>
+    <property name="tileWidth" value="2096"/>
+    <property name="tileHeight" value="2096"/>
+  </bean>
+  <bean name="bp_denkmschensflsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_denkmschensflsym_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpDenkmschensfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_denkmschensflsym_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_denkmschensflsym"/>
+    <property name="tileWidth" value="2096"/>
+    <property name="tileHeight" value="2096"/>
+  </bean>
+  <bean name="bp_erhsberflsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_erhsberflsym_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpErhsBerFl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_erhsberflsym_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_erhsberflsym"/>
+    <property name="tileWidth" value="2096"/>
+    <property name="tileHeight" value="2096"/>
+  </bean>
+  <bean name="bp_festsbaugebsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_festsbaugebsym_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpFestsBaugeb"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_festsbaugebsym_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_festsbaugebsym"/>
+    <property name="tileWidth" value="2096"/>
+    <property name="tileHeight" value="2096"/>
+  </bean>
+  <bean name="bp_gembedarfsflsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_gembedarfsflsym_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpGembedarfsfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_gembedarfsflsym_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_gembedarfsflsym"/>
+    <property name="tileWidth" value="2096"/>
+    <property name="tileHeight" value="2096"/>
+  </bean>
+  <bean name="bp_gemanlflsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_gemanlflsym_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpGemanlfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_gemanlflsym_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_gemanlflsym"/>
+    <property name="tileWidth" value="2096"/>
+    <property name="tileHeight" value="2096"/>
+  </bean>
+  <bean name="bp_gewflsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_gewflsym_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpGewfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_gewflsym_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_gewflsym"/>
+    <property name="tileWidth" value="2096"/>
+    <property name="tileHeight" value="2096"/>
+  </bean>
+  <bean name="bp_gruenflsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_gruenflsym_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpGruenFlaeche"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_gruenflsym_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_gruenflsym"/>
+    <property name="tileWidth" value="2096"/>
+    <property name="tileHeight" value="2096"/>
+  </bean>
+  <bean name="bp_lwflsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_lwflsym_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpLwfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_lwflsym_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_lwflsym"/>
+    <property name="tileWidth" value="2096"/>
+    <property name="tileHeight" value="2096"/>
+  </bean>
+  <bean name="bp_luftverkflsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_luftverkflsym_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpLuftverkfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_luftverkflsym_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_luftverkflsym"/>
+    <property name="tileWidth" value="2096"/>
+    <property name="tileHeight" value="2096"/>
+  </bean>
+  <bean name="bp_nebenanlflsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_nebenanlflsym_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpNebenanlfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_nebenanlflsym_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_nebenanlflsym"/>
+    <property name="tileWidth" value="2096"/>
+    <property name="tileHeight" value="2096"/>
+  </bean>
+  <bean name="bp_schutzgebsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_schutzgebsym_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpSchutzgeb"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_schutzgebsym_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_schutzgebsym"/>
+    <property name="tileWidth" value="2096"/>
+    <property name="tileHeight" value="2096"/>
+  </bean>
+  <bean name="bp_schutzpflentwmassnsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_schutzpflentwmassnsym_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpSchutzpflentwmassn"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_schutzpflentwmassnsym_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_schutzpflentwmassnsym"/>
+    <property name="tileWidth" value="2096"/>
+    <property name="tileHeight" value="2096"/>
+  </bean>
+  <bean name="bp_spispoanlflsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_spispoanlflsym_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpSpispoanlfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_spispoanlflsym_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_spispoanlflsym"/>
+    <property name="tileWidth" value="2096"/>
+    <property name="tileHeight" value="2096"/>
+  </bean>
+  <bean name="bp_verentsorgungsflsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_verentsorgungsflsym_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpVerentsorgungsfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_verentsorgungsflsym_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_verentsorgungsflsym"/>
+    <property name="tileWidth" value="2096"/>
+    <property name="tileHeight" value="2096"/>
+  </bean>
+  <bean name="bp_verentsorgungsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_verentsorgungsym_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpVerentsorgung"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_verentsorgungsym_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_verentsorgungsym"/>
+    <property name="tileWidth" value="2096"/>
+    <property name="tileHeight" value="2096"/>
+  </bean>
+  <bean name="bp_verksflbeszwbsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_verksflbeszwbsym_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpVerksflbeszwb"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_verksflbeszwbsym_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_verksflbeszwbsym"/>
+    <property name="tileWidth" value="2096"/>
+    <property name="tileHeight" value="2096"/>
+  </bean>
+  <bean name="bp_vorbhwsflsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_vorbhwsflsym_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpVorbhwsfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_vorbhwsflsym_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_vorbhwsflsym"/>
+    <property name="tileWidth" value="2096"/>
+    <property name="tileHeight" value="2096"/>
+  </bean>
+  <bean name="bp_waldflsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_waldflsym_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpWaldfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_waldflsym_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_waldflsym"/>
+    <property name="tileWidth" value="2096"/>
+    <property name="tileHeight" value="2096"/>
+  </bean>
+  <bean name="bp_wrlfestsflsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_wrlfestsflsym_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpWrlfestsfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_wrlfestsflsym_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_wrlfestsflsym"/>
+    <property name="tileWidth" value="2096"/>
+    <property name="tileHeight" value="2096"/>
+  </bean>
+  <bean name="bp_wwssflsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_wwssflsym_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpWwssfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_wwssflsym_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_wwssflsym"/>
+    <property name="tileWidth" value="2096"/>
+    <property name="tileHeight" value="2096"/>
+  </bean>
+
+  <!-- Fachobjekte -->
+
+  <bean name="bp_denkmscheinzanlpt" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_denkmscheinzanlpt_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpDenkmscheinzanlpt"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_denkmscheinzanlpt_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_denkmscheinzanlpt"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_anpflanzbinderh" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_anpflanzbinderh_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpAnpflanzbinderh"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_anpflanzbinderh_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_anpflanzbinderh"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_hoehenpt" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_hoehenpt_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpHoehenpt"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_hoehenpt_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_hoehenpt"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_einfpt" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_einfpt_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpEinfPt"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_einfpt_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_einfpt"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_genobj" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_genobj_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpGenobj"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_genobj_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_genobj"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_nebenanlfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_nebenanlfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpNebenanlfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_nebenanlfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_nebenanlfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_bahnverk" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_bahnverk_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpBahnVerkehr"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_bahnverk_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_bahnverk"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_baugr" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_baugr_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpBauGrenze"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_baugr_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_baugr"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_baulin" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_baulin_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpBauLinie"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_baulin_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_baulin"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_lwlin" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_lwlin_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpLwlin"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_lwlin_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_lwlin"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_schutzpflentwfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_schutzpflentwfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpSchutzpflentwfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_schutzpflentwfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_schutzpflentwfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_berohneeinausflin" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_berohneeinausflin_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpBerohneeinausflin"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_berohneeinausflin_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_berohneeinausflin"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_einfberlin" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_einfberlin_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpEinfBerLin"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_einfberlin_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_einfberlin"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_firstrilin" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_firstrilin_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpFirstrilin"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_firstrilin_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_firstrilin"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_immsschutz" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_immsschutz_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpImmsschutz"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_immsschutz_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_immsschutz"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_nutzartgr" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_nutzartgr_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpNutzartgr"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_nutzartgr_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_nutzartgr"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_verentsorgungsleitlin" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_verentsorgungsleitlin_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever"
+              ref="numberOfFeaturesInEnvelopeRetrieverBpVerentsorgungsleitlin"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_verentsorgungsleitlin_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_verentsorgungsleitlin"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_wegerecht" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_wegerecht_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpWegerecht"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_wegerecht_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_wegerecht"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_spispoanlfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_spispoanlfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpSpispoanlfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_spispoanlfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_spispoanlfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_schutzgeb" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_schutzgeb_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpSchutzgeb"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_schutzgeb_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_schutzgeb"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_kennzsfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_kennzsfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpKennzsfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_kennzsfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_kennzsfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_vorbhwsfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_vorbhwsfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpVorbhwsfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_vorbhwsfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_vorbhwsfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_abgrabungsfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_abgrabungsfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpAbgrabungsfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_abgrabungsfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_abgrabungsfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_abstandsfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_abstandsfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpAbstandsfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_abstandsfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_abstandsfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_aufschuettsfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_aufschuettsfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpAufschuettsfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_aufschuettsfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_aufschuettsfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_ausgleich" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_ausgleich_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpAusgleich"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_ausgleich_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_ausgleich"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_ausgleichsfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_ausgleichsfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpAusgleichsfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_ausgleichsfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_ausgleichsfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_bsfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_bsfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpBsfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_bsfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_bsfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_denkmschensfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_denkmschensfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpDenkmschensfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_denkmschensfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_denkmschensfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_strbegrlin" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_strbegrlin_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpStrbegrlin"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_strbegrlin_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_strbegrlin"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_erhsberfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_erhsberfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpErhsBerFl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_erhsberfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_erhsberfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_foerderfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_foerderfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpFoerderfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_foerderfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_foerderfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_freifl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_freifl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpFreifl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_freifl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_freifl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_gemanlfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_gemanlfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpGemanlfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_gemanlfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_gemanlfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_verentsorgung" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_verentsorgung_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpVerentsorgung"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_verentsorgung_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_verentsorgung"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_ueberbaubgrundstsfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_ueberbaubgrundstsfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever"
+              ref="numberOfFeaturesInEnvelopeRetrieverbBpUeberbaubgrundstsfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_ueberbaubgrundstsfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_ueberbaubgrundstsfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_luftreinhfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_luftreinhfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpLuftreinhfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_luftreinhfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_luftreinhfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_luftverkfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_luftverkfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpLuftverkfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_luftverkfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_luftverkfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_persgrbestfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_persgrbestfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpPersgrbestfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_persgrbestfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_persgrbestfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_strkoerper" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_strkoerper_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpStrkoerper"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_strkoerper_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_strkoerper"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_techbestfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_techbestfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpTechbestfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_techbestfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_techbestfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_wrlfestsfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_wrlfestsfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpWrlfestsfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_wrlfestsfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_wrlfestsfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_wwssfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_wwssfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpWwssfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_wwssfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_wwssfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_bauschutzber" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_bauschutzber_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpBauschutzbereich"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_bauschutzber_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_bauschutzber"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_fachgesetz" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_fachgesetz_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpFachgesetz"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_fachgesetz_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_fachgesetz"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_schutzpflentwmassn" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_schutzpflentwmassn_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpSchutzpflentwmassn"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_schutzpflentwmassn_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_schutzpflentwmassn"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_nebenanlausschlfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_nebenanlausschlfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpNebenanlausschlfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_nebenanlausschlfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_nebenanlausschlfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_ausgleichsmassn" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_ausgleichsmassn_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpAusgleichsMass"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_ausgleichsmassn_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_ausgleichsmassn"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_besnutzzweckfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_besnutzzweckfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpBesnutzzweckfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_besnutzzweckfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_besnutzzweckfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_erneuerbenergiefl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_erneuerbenergiefl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpErneuerbenergiefl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_erneuerbenergiefl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_erneuerbenergiefl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_grabungsschutzgeb" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_grabungsschutzgeb_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpGrabungsschutzgeb"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_grabungsschutzgeb_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_grabungsschutzgeb"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_speziellebauweise" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_speziellebauweise_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpSpeziellebauweise"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_speziellebauweise_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_speziellebauweise"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_rekultivierungsfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_rekultivierungsfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpRekultivierungsfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_rekultivierungsfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_rekultivierungsfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_unverbindlvormerk" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_unverbindlvormerk_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpUnverbindlvormerk"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_unverbindlvormerk_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_unverbindlvormerk"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_baugeb" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_baugeb_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpBauGebiet"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_baugeb_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_baugeb"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_laermschutzber" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_laermschutzber_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpLaermschutzber"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_laermschutzber_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_laermschutzber"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_textlfestsfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_textlfestsfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpTextlfestsfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_textlfestsfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_textlfestsfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_gebaeudefl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_gebaeudefl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpGebaeudefl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_gebaeudefl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_gebaeudefl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_gembedarfsfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_gembedarfsfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpGembedarfsfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_gembedarfsfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_gembedarfsfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_gewfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_gewfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpGewfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_gewfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_gewfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_verentsorgungsfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_verentsorgungsfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpVerentsorgungsfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_verentsorgungsfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_verentsorgungsfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_gruenfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_gruenfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpGruenFlaeche"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_gruenfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_gruenfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_verksflbeszwb" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_verksflbeszwb_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpVerksflbeszwb"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_verksflbeszwb_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_verksflbeszwb"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_baugebteilfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_baugebteilfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpBauGebTeilFl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_baugebteilfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_baugebteilfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_lwfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_lwfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpLwfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_lwfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_lwfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_strverksfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_strverksfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpStrverksfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_strverksfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_strverksfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+  <bean name="bp_waldfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_waldfl_ref"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="true"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="true"/>
+    <property name="numberOfFeaturesInEnvelopeRetriever" ref="numberOfFeaturesInEnvelopeRetrieverBpWaldfl"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layer_bp_waldfl_ref" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="bp_waldfl"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+</beans>

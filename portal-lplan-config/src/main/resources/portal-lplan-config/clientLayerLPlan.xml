@@ -1,0 +1,305 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPlan">
+    <property name="aggregationId" value="lp_plan"/>
+    <property name="serverLayerId" value="lp_plan"/>
+    <property name="label" value="LP: Plan"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPBereich">
+    <property name="aggregationId" value="lp_plan"/>
+    <property name="serverLayerId" value="lp_bereich"/>
+    <property name="label" value="LP: Bereich"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPAbgrenzung">
+    <property name="aggregationId" value="lp_plan"/>
+    <property name="serverLayerId" value="lp_abgrenzung"/>
+    <property name="label" value="LP: Abgrenzung"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPAllgGruenflaeche">
+    <property name="aggregationId" value="lp_plan"/>
+    <property name="serverLayerId" value="lp_allggruenfl"/>
+    <property name="label" value="LP: AllgGruenflaeche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPAusgleich">
+    <property name="aggregationId" value="lp_plan"/>
+    <property name="serverLayerId" value="lp_ausgleich"/>
+    <property name="label" value="LP: Ausgleich"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPBiotopverbundflaeche">
+    <property name="aggregationId" value="lp_plan"/>
+    <property name="serverLayerId" value="lp_biotopverbundfl"/>
+    <property name="label" value="LP: Biotopverbundflaeche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPBodenschutzrecht">
+    <property name="aggregationId" value="lp_plan"/>
+    <property name="serverLayerId" value="lp_bodenschutzrecht"/>
+    <property name="label" value="LP: Bodenschutzrecht"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPDenkmalschutzrecht">
+    <property name="aggregationId" value="lp_plan"/>
+    <property name="serverLayerId" value="lp_denkmschrecht"/>
+    <property name="label" value="LP: Denkmalschutzrecht"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPErholungFreizeit">
+    <property name="aggregationId" value="lp_plan"/>
+    <property name="serverLayerId" value="lp_erholungfreizeit"/>
+    <property name="label" value="LP: ErholungFreizeit"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPForstrecht">
+    <property name="aggregationId" value="lp_plan"/>
+    <property name="serverLayerId" value="lp_forstrecht"/>
+    <property name="label" value="LP: Forstrecht"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPGenerischesObjekt">
+    <property name="aggregationId" value="lp_plan"/>
+    <property name="serverLayerId" value="lp_genobj"/>
+    <property name="label" value="LP: GenerischesObjekt"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPNutzungsAusschluss">
+    <property name="aggregationId" value="lp_plan"/>
+    <property name="serverLayerId" value="lp_nutzausschl"/>
+    <property name="label" value="LP: NutzungsAusschluss"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPNutzungserfordernisRegelung">
+    <property name="aggregationId" value="lp_plan"/>
+    <property name="serverLayerId" value="lp_nutzerforderregelung"/>
+    <property name="label" value="LP: NutzungserfordernisRegelung"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPPlanerischeVertiefung">
+    <property name="aggregationId" value="lp_plan"/>
+    <property name="serverLayerId" value="lp_planerischevertief"/>
+    <property name="label" value="LP: PlanerischeVertiefung"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPSchutzobjektBundesrecht">
+    <property name="aggregationId" value="lp_plan"/>
+    <property name="serverLayerId" value="lp_schutzobjbundesrecht"/>
+    <property name="label" value="LP: SchutzobjektBundesrecht"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPSchutzobjektInternatRecht">
+    <property name="aggregationId" value="lp_plan"/>
+    <property name="serverLayerId" value="lp_schutzobjinterrecht"/>
+    <property name="label" value="LP: SchutzobjektInternatRecht"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPSchutzPflegeEntwicklung">
+    <property name="aggregationId" value="lp_plan"/>
+    <property name="serverLayerId" value="lp_schutzpflentw"/>
+    <property name="label" value="LP: SchutzPflegeEntwicklung"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPSonstigesRecht">
+    <property name="aggregationId" value="lp_plan"/>
+    <property name="serverLayerId" value="lp_sonstsrecht"/>
+    <property name="label" value="LP: SonstigesRecht"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo"
+        id="clientLayerLPWasserrechtGemeingebrEinschraenkungNaturschutz">
+    <property name="aggregationId" value="lp_plan"/>
+    <property name="serverLayerId" value="lp_wrgemgebreinschrnats"/>
+    <property name="label" value="LP: WasserrechtGemeingebrEinschraenkungNaturschutz"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPWasserrechtSchutzgebiet">
+    <property name="aggregationId" value="lp_plan"/>
+    <property name="serverLayerId" value="lp_wrschutzgeb"/>
+    <property name="label" value="LP: WasserrechtSchutzgebiet"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPWasserrechtSonstige">
+    <property name="aggregationId" value="lp_plan"/>
+    <property name="serverLayerId" value="lp_wrsonst"/>
+    <property name="label" value="LP: WasserrechtSonstige"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo"
+        id="clientLayerLPWasserrechtWirtschaftAbflussHochwSchutz">
+    <property name="aggregationId" value="lp_plan"/>
+    <property name="serverLayerId" value="lp_wrwirtschabflusshws"/>
+    <property name="label" value="LP: WasserrechtWirtschaftAbflussHochwSchutz"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPZwischennutzung">
+    <property name="aggregationId" value="lp_plan"/>
+    <property name="serverLayerId" value="lp_zwischennutz"/>
+    <property name="label" value="LP: Zwischennutzung"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <!-- Beschriftung -->
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPXpPto">
+    <property name="aggregationId" value="lp_plan_beschriftung"/>
+    <property name="serverLayerId" value="lp_xp_pto"/>
+    <property name="label" value="LP: XP: PTO"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPXpLto">
+    <property name="aggregationId" value="lp_plan_beschriftung"/>
+    <property name="serverLayerId" value="lp_xp_lto"/>
+    <property name="label" value="LP: XP: LTO"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <!-- Symbole -->
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPXpFpo">
+    <property name="aggregationId" value="lp_plan_sym"/>
+    <property name="serverLayerId" value="lp_xp_fpo"/>
+    <property name="label" value="LP: XP: FPO"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPXpLpo">
+    <property name="aggregationId" value="lp_plan_sym"/>
+    <property name="serverLayerId" value="lp_xp_lpo"/>
+    <property name="label" value="LP: XP: LPO"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPXpPpo">
+    <property name="aggregationId" value="lp_plan_sym"/>
+    <property name="serverLayerId" value="lp_xp_ppo"/>
+    <property name="label" value="LP: XP: PPO"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPSchutzobjbundesrechtsym">
+    <property name="aggregationId" value="lp_plan_sym"/>
+    <property name="serverLayerId" value="lp_schutzobjbundesrechtsym"/>
+    <property name="label" value="LP: Schutzobjekt Bundesrecht Symbole"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPSchutzobjinterrechtsym">
+    <property name="aggregationId" value="lp_plan_sym"/>
+    <property name="serverLayerId" value="lp_schutzobjinterrechtsym"/>
+    <property name="label" value="LP: Schutzobjekt internationales Recht Symbol"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPDenkmschrechtsym">
+    <property name="aggregationId" value="lp_plan_sym"/>
+    <property name="serverLayerId" value="lp_denkmschrechtsym"/>
+    <property name="label" value="LP: Denkmalschutzrecht Symbole"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPAusgleichsym">
+    <property name="aggregationId" value="lp_plan_sym"/>
+    <property name="serverLayerId" value="lp_ausgleichsym"/>
+    <property name="label" value="LP: Ausgleich Symbole"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPWrschutzgebsym">
+    <property name="aggregationId" value="lp_plan_sym"/>
+    <property name="serverLayerId" value="lp_wrschutzgebsym"/>
+    <property name="label" value="LP: Wasserrechtliche Schutzgebiete Symbole"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPWrgemgebreinschrnatssym">
+    <property name="aggregationId" value="lp_plan_sym"/>
+    <property name="serverLayerId" value="lp_wrgemgebreinschrnatssym"/>
+    <property name="label" value="LP: Wasserrechtliche Einschränkungen Symbole"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPWrwirtschabflusshwssym">
+    <property name="aggregationId" value="lp_plan_sym"/>
+    <property name="serverLayerId" value="lp_wrwirtschabflusshwssym"/>
+    <property name="label" value="LP: Wasserwirtschaft Abfluss Hochwasserschutz"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPForstrechtsym">
+    <property name="aggregationId" value="lp_plan_sym"/>
+    <property name="serverLayerId" value="lp_forstrechtsym"/>
+    <property name="label" value="LP: Forstrecht Symbole"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerLPNutzerforderregelungsym">
+    <property name="aggregationId" value="lp_plan_sym"/>
+    <property name="serverLayerId" value="lp_nutzerforderregelungsym"/>
+    <property name="label" value="LP: Nutzungserfordernis Symbole"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+</beans>
+	

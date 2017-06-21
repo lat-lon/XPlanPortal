@@ -1,0 +1,490 @@
+<!-- ~ This is part of Geomajas, a GIS framework, http://www.geomajas.org/. ~ ~ Copyright 2008-2013 Geosparc nv, http://www.geosparc.com/, 
+Belgium. ~ ~ The program is available in open source according to the GNU Affero ~ General Public License. All contributions 
+in this program are covered ~ by the Geomajas Contributors License Agreement. For full licensing ~ details, see LICENSE.txt 
+in the project root. -->
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+
+  <bean name="mapMain" class="org.geomajas.configuration.client.ClientMapInfo">
+    <property name="backgroundColor" value="#FFFFFF"/>
+    <property name="crs" value="EPSG:25833"/>
+    <property name="scaleBarEnabled" value="true"/>
+    <property name="panButtonsEnabled" value="true"/>
+    <property name="scaleConfiguration">
+      <bean class="org.geomajas.configuration.client.ScaleConfigurationInfo">
+        <property name="maximumScale" value="1:50"/>
+        <property name="zoomLevels">
+          <list>
+            <value>1:300000</value>
+            <value>1:250000</value>
+            <value>1:200000</value>
+            <value>1:150000</value>
+            <value>1:100000</value>
+            <value>1:75000</value>
+            <value>1:50000</value>
+            <value>1:35000</value>
+            <value>1:25000</value>
+            <value>1:20000</value>
+            <value>1:15000</value>
+            <value>1:10000</value>
+            <value>1:7500</value>
+            <value>1:5000</value>
+            <value>1:2500</value>
+            <value>1:1000</value>
+            <value>1:500</value>
+            <value>1:250</value>
+            <value>1:100</value>
+            <value>1:50</value>
+          </list>
+        </property>
+      </bean>
+    </property>
+    <property name="pointSelectStyle">
+      <bean class="org.geomajas.configuration.FeatureStyleInfo">
+        <property name="fillColor" value="#FFFF00"/>
+      </bean>
+    </property>
+    <property name="polygonSelectStyle">
+      <bean class="org.geomajas.configuration.FeatureStyleInfo">
+        <property name="fillColor" value="#FFFF00"/>
+        <property name="fillOpacity" value=".5"/>
+      </bean>
+    </property>
+    <property name="lineSelectStyle">
+      <bean class="org.geomajas.configuration.FeatureStyleInfo">
+        <property name="fillOpacity" value="0"/>
+        <property name="strokeColor" value="#FF6600"/>
+        <property name="strokeOpacity" value="1"/>
+      </bean>
+    </property>
+    <property name="initialBounds">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="362240"/>
+        <property name="y" value="5691097"/>
+        <property name="width" value="63196"/>
+        <property name="height" value="59431"/>
+      </bean>
+    </property>
+    <property name="layers">
+      <list>
+        <ref bean="clientlayerluftbild"/>
+        <ref bean="clientlayerluftbilda"/>
+        <ref bean="clientlayertopo"/>
+        <ref bean="clientLayerFPRaster"/>
+
+        <ref bean="clientLayerFPEichholz"/>
+        <ref bean="clientLayerFPFischwasser"/>
+        <ref bean="clientLayerFPGruhno"/>
+        <ref bean="clientLayerFPLindena"/>
+        <ref bean="clientLayerFPOppelhain"/>
+        <ref bean="clientLayerFPSchadewitz"/>
+        <ref bean="clientLayerFPRueckersdorf"/>
+        <ref bean="clientLayerFPSchilda"/>
+        <ref bean="clientLayerFPSchoenborn"/>
+        <ref bean="clientLayerFPTroebitz"/>
+
+        <ref bean="clientLayerFPGroeden"/>
+        <ref bean="clientLayerFPGrossthiemig"/>
+        <ref bean="clientLayerFPHirschfeld"/>
+        <ref bean="clientLayerFPMerzdorf"/>
+
+        <ref bean="clientLayerFPBebausfl"/>
+        <ref bean="clientLayerFPGew"/>
+        <ref bean="clientLayerFPWald"/>
+        <ref bean="clientLayerFPGruen"/>
+        <ref bean="clientLayerFPLwfl"/>
+        <ref bean="clientLayerFPBahnverk"/>
+        <ref bean="clientLayerFPStrverk"/>
+        <ref bean="clientLayerFPKennz"/>
+        <ref bean="clientLayerFPBsfl"/>
+        <ref bean="clientLayerFPAbgrab"/>
+        <ref bean="clientLayerFPAufsch"/>
+        <ref bean="clientLayerFPZentr"/>
+        <ref bean="clientLayerFPText"/>
+        <ref bean="clientLayerFPAnpass"/>
+        <ref bean="clientLayerFPGenobj"/>
+        <ref bean="clientLayerFPFachg"/>
+        <ref bean="clientLayerFPAusgl"/>
+        <ref bean="clientLayerFPVorb"/>
+        <ref bean="clientLayerFPWr"/>
+        <ref bean="clientLayerFPWws"/>
+        <ref bean="clientLayerFPVere"/>
+        <ref bean="clientLayerFPSchutz"/>
+        <ref bean="clientLayerFPSchpf"/>
+        <ref bean="clientLayerFPGem"/>
+        <ref bean="clientLayerFPSpi"/>
+        <ref bean="clientLayerFPLuft"/>
+        <ref bean="clientLayerFPDenk"/>
+        <ref bean="clientLayerFPErh"/>
+        <ref bean="clientLayerFPNutz"/>
+        <ref bean="clientLayerFPRast"/>
+        <ref bean="clientLayerFPGrab"/>
+        <ref bean="clientLayerFPUnv"/>
+        <ref bean="clientLayerFPTextlD"/>
+        <ref bean="clientLayerFPLaerm"/>
+        <ref bean="clientLayerFPBausch"/>
+        <ref bean="clientLayerFPKeine"/>
+        <ref bean="clientLayerFPPriv"/>
+        <ref bean="clientLayerFPVorbe"/>
+
+        <ref bean="clientLayerFPPTO"/>
+        <ref bean="clientLayerFPLTO"/>
+        <ref bean="clientLayerFPBahnSym"/>
+        <ref bean="clientLayerFPGemSym"/>
+        <ref bean="clientLayerFPGewSym"/>
+        <ref bean="clientLayerFPVorbhwSym"/>
+        <ref bean="clientLayerFPWrSym"/>
+        <ref bean="clientLayerFPlwflSym"/>
+        <ref bean="clientLayerFPwssSym"/>
+        <ref bean="clientLayerFPbsflSym"/>
+        <ref bean="clientLayerFPAufschSym"/>
+        <ref bean="clientLayerFPAbgrabSym"/>
+        <ref bean="clientLayerFPVereSym"/>
+        <ref bean="clientLayerFPWaldSym"/>
+        <ref bean="clientLayerFPStrvSym"/>
+        <ref bean="clientLayerFPDenkSym"/>
+        <ref bean="clientLayerFPErhSym"/>
+        <ref bean="clientLayerFPSchutzSym"/>
+        <ref bean="clientLayerFPSchpfSym"/>
+        <ref bean="clientLayerFPGruenSym"/>
+        <ref bean="clientLayerFPBer"/>
+        <ref bean="clientLayerFPlan"/>
+
+        <ref bean="clientLayerFPlanWFS"/>
+        <ref bean="clientLayerFPBebauungWFS"/>
+
+
+      </list>
+    </property>
+    <property name="widgetInfo">
+      <map>
+
+        <entry>
+          <key>
+            <util:constant
+                static-field="org.geomajas.widget.layer.configuration.client.ClientLayerTreeInfo.IDENTIFIER"/>
+          </key>
+          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerTreeInfo">
+            <property name="iconSize" value="22"/>
+            <property name="tools">
+              <list>
+                <ref bean="LayerVisibleTool"/>
+                <ref bean="LayerLabeledTool"/>
+                <ref bean="LayerRefreshAction"/>
+              </list>
+            </property>
+            <property name="treeNode">
+              <bean class="org.geomajas.widget.layer.configuration.client.ClientBranchNodeInfo">
+                <property name="label" value="Ebenen"/>
+                <property name="treeNodes">
+                  <list>
+                    <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                      <property name="layerId" value="clientLayerFPlan"/>
+                    </bean>
+                    <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                      <property name="layerId" value="clientLayerFPBer"/>
+                    </bean>
+                    <bean class="org.geomajas.widget.layer.configuration.client.ClientBranchNodeInfo">
+                      <property name="label" value="Beschriftungen und Symbole"/>
+                      <property name="expanded" value="false"/>
+                      <property name="treeNodes">
+                        <list>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPPTO"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPLTO"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPBahnSym"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPGemSym"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPGewSym"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPVorbhwSym"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPWrSym"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPlwflSym"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPwssSym"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPbsflSym"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPAufschSym"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPAbgrabSym"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPVereSym"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPWaldSym"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPStrvSym"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPDenkSym"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPErhSym"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPSchutzSym"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPSchpfSym"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPGruenSym"/>
+                          </bean>
+                        </list>
+                      </property>
+                    </bean>
+                    <bean class="org.geomajas.widget.layer.configuration.client.ClientBranchNodeInfo">
+                      <property name="label" value="Fachobjekte"/>
+                      <property name="expanded" value="false"/>
+                      <property name="treeNodes">
+                        <list>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPVorbe"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPPriv"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPKeine"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPBausch"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPLaerm"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPTextlD"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPUnv"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPGrab"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPRast"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPNutz"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPErh"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPDenk"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPSpi"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPGem"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPSchpf"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPSchutz"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPVere"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPWws"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPWr"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPVorb"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPAusgl"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPFachg"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPGenobj"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPAnpass"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPText"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPZentr"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPAufsch"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPAbgrab"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPBsfl"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPKennz"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPLuft"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPStrverk"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPBahnverk"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPLwfl"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPGruen"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPBebausfl"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPWald"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPGew"/>
+                          </bean>
+                        </list>
+                      </property>
+                    </bean>
+                    <bean class="org.geomajas.widget.layer.configuration.client.ClientBranchNodeInfo">
+                      <property name="label" value="Rasterpläne"/>
+                      <property name="expanded" value="true"/>
+                      <property name="treeNodes">
+                        <list>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerFPRaster"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientBranchNodeInfo">
+                            <property name="label" value="Einzelpläne"/>
+                            <property name="expanded" value="false"/>
+                            <property name="treeNodes">
+                              <list>
+                                <bean class="org.geomajas.widget.layer.configuration.client.ClientBranchNodeInfo">
+                                  <property name="label" value="Elsterland"/>
+                                  <property name="expanded" value="false"/>
+                                  <property name="treeNodes">
+                                    <list>
+                                      <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                                        <property name="layerId" value="clientLayerFPEichholz"/>
+                                      </bean>
+                                      <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                                        <property name="layerId" value="clientLayerFPFischwasser"/>
+                                      </bean>
+                                      <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                                        <property name="layerId" value="clientLayerFPGruhno"/>
+                                      </bean>
+                                      <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                                        <property name="layerId" value="clientLayerFPLindena"/>
+                                      </bean>
+                                      <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                                        <property name="layerId" value="clientLayerFPOppelhain"/>
+                                      </bean>
+                                      <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                                        <property name="layerId" value="clientLayerFPSchadewitz"/>
+                                      </bean>
+                                      <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                                        <property name="layerId" value="clientLayerFPRueckersdorf"/>
+                                      </bean>
+                                      <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                                        <property name="layerId" value="clientLayerFPSchilda"/>
+                                      </bean>
+                                      <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                                        <property name="layerId" value="clientLayerFPSchoenborn"/>
+                                      </bean>
+
+                                      <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                                        <property name="layerId" value="clientLayerFPTroebitz"/>
+                                      </bean>
+                                    </list>
+                                  </property>
+                                </bean>
+                                <bean class="org.geomajas.widget.layer.configuration.client.ClientBranchNodeInfo">
+                                  <property name="label" value="Schradenland"/>
+                                  <property name="expanded" value="false"/>
+                                  <property name="treeNodes">
+                                    <list>
+                                      <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                                        <property name="layerId" value="clientLayerFPGroeden"/>
+                                      </bean>
+                                      <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                                        <property name="layerId" value="clientLayerFPGrossthiemig"/>
+                                      </bean>
+
+                                      <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                                        <property name="layerId" value="clientLayerFPHirschfeld"/>
+                                      </bean>
+
+                                      <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                                        <property name="layerId" value="clientLayerFPMerzdorf"/>
+                                      </bean>
+                                    </list>
+                                  </property>
+                                </bean>
+                              </list>
+                            </property>
+                          </bean>
+                        </list>
+                      </property>
+                    </bean>
+
+
+                    <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                      <property name="layerId" value="clientlayertopo"/>
+                    </bean>
+                    <bean class="org.geomajas.widget.layer.configuration.client.ClientBranchNodeInfo">
+                      <property name="label" value="Luftbild"/>
+                      <property name="expanded" value="false"/>
+                      <property name="treeNodes">
+                        <list>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayerluftbilda"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayerluftbild"/>
+                          </bean>
+                        </list>
+                      </property>
+                    </bean>
+                  </list>
+                </property>
+                <property name="expanded" value="true"/>
+              </bean>
+            </property>
+          </bean>
+        </entry>
+      </map>
+    </property>
+  </bean>
+</beans>

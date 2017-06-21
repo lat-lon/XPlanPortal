@@ -1,0 +1,892 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+  <bean class="org.geomajas.configuration.client.ScaleInfo" id="bpfachscalemin">
+    <property name="numerator" value="1"/>
+    <property name="denominator" value="50000"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ScaleInfo" id="bpsymscalemin">
+    <property name="numerator" value="1"/>
+    <property name="denominator" value="25000"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ScaleInfo" id="bpfachscalemax">
+    <property name="numerator" value="1"/>
+    <property name="denominator" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ScaleInfo" id="bpsymscalemax">
+    <property name="numerator" value="1"/>
+    <property name="denominator" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_plan_ref">
+    <property name="serverLayerId" value="bp_plan"/>
+    <property name="label" value="BP: Plan"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+    <property name="aggregationId" value="bp_plan"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_ber_ref">
+    <property name="serverLayerId" value="bp_ber"/>
+    <property name="label" value="BP: Bereich"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+    <property name="aggregationId" value="bp_plan"/>
+
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_xp_pto_ref">
+    <property name="serverLayerId" value="bp_xp_pto"/>
+    <property name="label" value="BP: XP: Punkthafte Textobjekte"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_plansym"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_xp_lto_ref">
+    <property name="serverLayerId" value="bp_xp_lto"/>
+    <property name="label" value="BP: XP: Linienhafte Textobjekte"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_plansym"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_abgrabungsflsym_ref">
+    <property name="serverLayerId" value="bp_abgrabungsflsym"/>
+    <property name="label" value="BP: Abgrabungsfläche Symbol"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_plan"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_aufschuettsflsym_ref">
+    <property name="serverLayerId" value="bp_aufschuettsflsym"/>
+    <property name="label" value="bp_aufschuettsflsym"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_plansym"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_bahnverksym_ref">
+    <property name="serverLayerId" value="bp_bahnverksym"/>
+    <property name="label" value="BP: Bahnverkehr Symbol"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_plansym"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_baugebteilflsym_ref">
+    <property name="serverLayerId" value="bp_baugebteilflsym"/>
+    <property name="label" value="BP: Baugebietsteilfläche Symbol"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_plan"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_besnutzzweckflsym_ref">
+    <property name="serverLayerId" value="bp_besnutzzweckflsym"/>
+    <property name="label" value="BP: Fläche besonderer Nutzung Symbol"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_plansym"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_bsflsym_ref">
+    <property name="serverLayerId" value="bp_bsflsym"/>
+    <property name="label" value="BP: Gewinnung von Bodenschätzen Symbol"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_plansym"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_denkmschensflsym_ref">
+    <property name="serverLayerId" value="bp_denkmschensflsym"/>
+    <property name="label" value="BP: Denkmalensemble Symbol"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_plansym"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_erhsberflsym_ref">
+    <property name="serverLayerId" value="bp_erhsberflsym"/>
+    <property name="label" value="BP: Erhaltungsbereich Symbol"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_plansym"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_festsbaugebsym_ref">
+    <property name="serverLayerId" value="bp_festsbaugebsym"/>
+    <property name="label" value="BP: Festsetzungen Baugebiet Symbol"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_plansym"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_gembedarfsflsym_ref">
+    <property name="serverLayerId" value="bp_gembedarfsflsym"/>
+    <property name="label" value="BP: Gemeinbedarfsfläche Symbol"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_plansym"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_gemanlflsym_ref">
+    <property name="serverLayerId" value="bp_gemanlflsym"/>
+    <property name="label" value="BP: Gemeinschaftsanlagen Symbol"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_plansym"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_gewflsym_ref">
+    <property name="serverLayerId" value="bp_gewflsym"/>
+    <property name="label" value="BP: Gewässer Fläche Symbol"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_plansym"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_gruenflsym_ref">
+    <property name="serverLayerId" value="bp_gruenflsym"/>
+    <property name="label" value="BP: Grünfläche Symbol"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_plansym"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_lwflsym_ref">
+    <property name="serverLayerId" value="bp_lwflsym"/>
+    <property name="label" value="BP: Landwirtschaftsfläche Symbol"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_plansym"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_luftverkflsym_ref">
+    <property name="serverLayerId" value="bp_luftverkflsym"/>
+    <property name="label" value="BP: Luftverkehrfläche Symbol"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_plansym"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_nebenanlflsym_ref">
+    <property name="serverLayerId" value="bp_nebenanlflsym"/>
+    <property name="label" value="BP: Nebenanlagen Symbol"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_plansym"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_schutzgebsym_ref">
+    <property name="serverLayerId" value="bp_schutzgebsym"/>
+    <property name="label" value="BP: Schutzgebiet Symbol"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_plansym"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_schutzpflentwmassnsym_ref">
+    <property name="serverLayerId" value="bp_schutzpflentwmassnsym"/>
+    <property name="label" value="BP: Schutz-, Pflege- und Entwicklungsmaßnahme Symbol"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_plansym"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_spispoanlflsym_ref">
+    <property name="serverLayerId" value="bp_spispoanlflsym"/>
+    <property name="label" value="BP: Spiel- und Sportanlagen Symbol"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_plansym"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_verentsorgungsflsym_ref">
+    <property name="serverLayerId" value="bp_verentsorgungsflsym"/>
+    <property name="label" value="BP: Ver- und Entsorgungsfläche Symbol"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_plansym"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_verentsorgungsym_ref">
+    <property name="serverLayerId" value="bp_verentsorgungsym"/>
+    <property name="label" value="BP: Ver- und Entsorgung Symbol"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_plansym"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_verksflbeszwbsym_ref">
+    <property name="serverLayerId" value="bp_verksflbeszwbsym"/>
+    <property name="label" value="BP: Verkehrsfläche besonderer Zweckbestimmung Symbol"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_plansym"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_vorbhwsflsym_ref">
+    <property name="serverLayerId" value="bp_vorbhwsflsym"/>
+    <property name="label" value="BP: Festgesetztes Überschwemmungsgebiet Symbol"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_plansym"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_waldflsym_ref">
+    <property name="serverLayerId" value="bp_waldflsym"/>
+    <property name="label" value="BP: Waldfläche Symbol"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_plansym"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_wrlfestsflsym_ref">
+    <property name="serverLayerId" value="bp_wrlfestsflsym"/>
+    <property name="label" value="BP: Wasserrechtliche Festsetzungen Symbol"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_plansym"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_wwssflsym_ref">
+    <property name="serverLayerId" value="bp_wwssflsym"/>
+    <property name="label" value="BP: Wasserwirtschaftsfläche Symbol"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_plansym"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_denkmscheinzanlpt_ref">
+    <property name="serverLayerId" value="bp_denkmscheinzanlpt"/>
+    <property name="label" value="BP: Einzeldenkmal"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planpl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_anpflanzbinderh_ref">
+    <property name="serverLayerId" value="bp_anpflanzbinderh"/>
+    <property name="label" value="BP: Anpflanzung, Erhalt und Bindung"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planpl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_hoehenpt_ref">
+    <property name="serverLayerId" value="bp_hoehenpt"/>
+    <property name="label" value="BP: Höhenpunkt"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planpl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_einfpt_ref">
+    <property name="serverLayerId" value="bp_einfpt"/>
+    <property name="label" value="BP: Einfahrt"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planpl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_genobj_ref">
+    <property name="serverLayerId" value="bp_genobj"/>
+    <property name="label" value="BP: Generisches Objekt"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planpl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_nebenanlfl_ref">
+    <property name="serverLayerId" value="bp_nebenanlfl"/>
+    <property name="label" value="BP: Nebenanlagen"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planpl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_bahnverk_ref">
+    <property name="serverLayerId" value="bp_bahnverk"/>
+    <property name="label" value="BP: Bahnverkehr"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planpl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_baugr_ref">
+    <property name="serverLayerId" value="bp_baugr"/>
+    <property name="label" value="BP: Baugrenze"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planpl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_baulin_ref">
+    <property name="serverLayerId" value="bp_baulin"/>
+    <property name="label" value="BP: Baulinie"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planpl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_lwlin_ref">
+    <property name="serverLayerId" value="bp_lwlin"/>
+    <property name="label" value="BP: Landwirtschaftlinie"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planpl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_schutzpflentwfl_ref">
+    <property name="serverLayerId" value="bp_schutzpflentwfl"/>
+    <property name="label" value="BP: Schutz-, Pflege- und Entwicklungsfläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planpl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_berohneeinausflin_ref">
+    <property name="serverLayerId" value="bp_berohneeinausflin"/>
+    <property name="label" value="BP: Bereich ohne Ein- oder Ausfahrt"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planpl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_einfberlin_ref">
+    <property name="serverLayerId" value="bp_einfberlin"/>
+    <property name="label" value="BP: Einfahrtsbereich"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planpl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_firstrilin_ref">
+    <property name="serverLayerId" value="bp_firstrilin"/>
+    <property name="label" value="BP: Firstrichtung"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planpl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_immsschutz_ref">
+    <property name="serverLayerId" value="bp_immsschutz"/>
+    <property name="label" value="BP: Immissionsschutz"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planpl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_nutzartgr_ref">
+    <property name="serverLayerId" value="bp_nutzartgr"/>
+    <property name="label" value="BP: Nutzungsartengrenze"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planpl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_verentsorgungsleitlin_ref">
+    <property name="serverLayerId" value="bp_verentsorgungsleitlin"/>
+    <property name="label" value="BP: Ver- und Entsorgungsleitung"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planpl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_wegerecht_ref">
+    <property name="serverLayerId" value="bp_wegerecht"/>
+    <property name="label" value="BP: Wegerecht"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planpl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_spispoanlfl_ref">
+    <property name="serverLayerId" value="bp_spispoanlfl"/>
+    <property name="label" value="BP: Spiel- und Sportanlagen"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_schutzgeb_ref">
+    <property name="serverLayerId" value="bp_schutzgeb"/>
+    <property name="label" value="BP: Schutzgebiet"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_kennzsfl_ref">
+    <property name="serverLayerId" value="bp_kennzsfl"/>
+    <property name="label" value="BP: Kennzeichnungsfläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_vorbhwsfl_ref">
+    <property name="serverLayerId" value="bp_vorbhwsfl"/>
+    <property name="label" value="BP: Festgesetztes Überschwemmungsgebiet"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_abgrabungsfl_ref">
+    <property name="serverLayerId" value="bp_abgrabungsfl"/>
+    <property name="label" value="BP: Abgrabungsfläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_abstandsfl_ref">
+    <property name="serverLayerId" value="bp_abstandsfl"/>
+    <property name="label" value="BP: Abstandsfläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_aufschuettsfl_ref">
+    <property name="serverLayerId" value="bp_aufschuettsfl"/>
+    <property name="label" value="BP: Aufschüttungsfläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_ausgleich_ref">
+    <property name="serverLayerId" value="bp_ausgleich"/>
+    <property name="label" value="BP: Ausgleich"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_ausgleichsfl_ref">
+    <property name="serverLayerId" value="bp_ausgleichsfl"/>
+    <property name="label" value="BP: Ausgleichsfläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_bsfl_ref">
+    <property name="serverLayerId" value="bp_bsfl"/>
+    <property name="label" value="BP: Gewinnung von Bodenschätzen"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_denkmschensfl_ref">
+    <property name="serverLayerId" value="bp_denkmschensfl"/>
+    <property name="label" value="BP: Denkmalensemble"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_strbegrlin_ref">
+    <property name="serverLayerId" value="bp_strbegrlin"/>
+    <property name="label" value="BP: Straßenbegrenzungslinie"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_erhsberfl_ref">
+    <property name="serverLayerId" value="bp_erhsberfl"/>
+    <property name="label" value="BP: Erhaltungsbereich"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_foerderfl_ref">
+    <property name="serverLayerId" value="bp_foerderfl"/>
+    <property name="label" value="BP: Soziale Wohnraumförderung"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_freifl_ref">
+    <property name="serverLayerId" value="bp_freifl"/>
+    <property name="label" value="BP: Freifläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_gemanlfl_ref">
+    <property name="serverLayerId" value="bp_gemanlfl"/>
+    <property name="label" value="BP: Gemeinschaftsanlagen"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_verentsorgung_ref">
+    <property name="serverLayerId" value="bp_verentsorgung"/>
+    <property name="label" value="BP: Ver– und Entsorgung"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_ueberbaubgrundstsfl_ref">
+    <property name="serverLayerId" value="bp_ueberbaubgrundstsfl"/>
+    <property name="label" value="BP: Überbaubare Grundstücksfläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_luftreinhfl_ref">
+    <property name="serverLayerId" value="bp_luftreinhfl"/>
+    <property name="label" value="BP: Luftreinhaltefläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_luftverkfl_ref">
+    <property name="serverLayerId" value="bp_luftverkfl"/>
+    <property name="label" value="BP: Luftverkehrfläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_persgrbestfl_ref">
+    <property name="serverLayerId" value="bp_persgrbestfl"/>
+    <property name="label" value="BP: Personengruppen bestimmte Fläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_strkoerper_ref">
+    <property name="serverLayerId" value="bp_strkoerper"/>
+    <property name="label" value="BP: Straßenkörper"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_techbestfl_ref">
+    <property name="serverLayerId" value="bp_techbestfl"/>
+    <property name="label" value="BP: Alternativenergiefläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_wrlfestsfl_ref">
+    <property name="serverLayerId" value="bp_wrlfestsfl"/>
+    <property name="label" value="BP: Wasserrechtliche Festsetzungen"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_wwssfl_ref">
+    <property name="serverLayerId" value="bp_wwssfl"/>
+    <property name="label" value="BP: Wasserwirtschaftsfläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_bauschutzber_ref">
+    <property name="serverLayerId" value="bp_bauschutzber"/>
+    <property name="label" value="BP: Bauschutzbereich"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_fachgesetz_ref">
+    <property name="serverLayerId" value="bp_fachgesetz"/>
+    <property name="label" value="BP: Fachgesetz"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_schutzpflentwmassn_ref">
+    <property name="serverLayerId" value="bp_schutzpflentwmassn"/>
+    <property name="label" value="BP: Schutz-, Pflege- und Entwicklungsmaßnahme"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_nebenanlausschlfl_ref">
+    <property name="serverLayerId" value="bp_nebenanlausschlfl"/>
+    <property name="label" value="BP: Nebenanlagenausschluss"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_ausgleichsmassn_ref">
+    <property name="serverLayerId" value="bp_ausgleichsmassn"/>
+    <property name="label" value="BP: Ausgleichsmassnahme"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_besnutzzweckfl_ref">
+    <property name="serverLayerId" value="bp_besnutzzweckfl"/>
+    <property name="label" value="BP: Fläche besonderer Nutzung"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_erneuerbenergiefl_ref">
+    <property name="serverLayerId" value="bp_erneuerbenergiefl"/>
+    <property name="label" value="BP: Erneuerbare Energie"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_grabungsschutzgeb_ref">
+    <property name="serverLayerId" value="bp_grabungsschutzgeb"/>
+    <property name="label" value="BP: Grabungsschutzgebiet"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_speziellebauweise_ref">
+    <property name="serverLayerId" value="bp_speziellebauweise"/>
+    <property name="label" value="BP: Spezielle Bauweise"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_rekultivierungsfl_ref">
+    <property name="serverLayerId" value="bp_rekultivierungsfl"/>
+    <property name="label" value="BP: Rekultivierungsfläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_unverbindlvormerk_ref">
+    <property name="serverLayerId" value="bp_unverbindlvormerk"/>
+    <property name="label" value="BP: Unverbindliche Vormerkung"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_baugeb_ref">
+    <property name="serverLayerId" value="bp_baugeb"/>
+    <property name="label" value="BP: Baugebiet"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_laermschutzber_ref">
+    <property name="serverLayerId" value="bp_laermschutzber"/>
+    <property name="label" value="BP: Lärmschutzbereich"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_textlfestsfl_ref">
+    <property name="serverLayerId" value="bp_textlfestsfl"/>
+    <property name="label" value="BP: Bereich textlicher Festsetzung"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_gebaeudefl_ref">
+    <property name="serverLayerId" value="bp_gebaeudefl"/>
+    <property name="label" value="BP: Gebäudefläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_gembedarfsfl_ref">
+    <property name="serverLayerId" value="bp_gembedarfsfl"/>
+    <property name="label" value="BP: Gemeinbedarfsfläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_gewfl_ref">
+    <property name="serverLayerId" value="bp_gewfl"/>
+    <property name="label" value="BP: Gewässer Fläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_verentsorgungsfl_ref">
+    <property name="serverLayerId" value="bp_verentsorgungsfl"/>
+    <property name="label" value="BP: Ver– und Entsorgungsfläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_gruenfl_ref">
+    <property name="serverLayerId" value="bp_gruenfl"/>
+    <property name="label" value="BP: Grünfläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_verksflbeszwb_ref">
+    <property name="serverLayerId" value="bp_verksflbeszwb"/>
+    <property name="label" value="BP: Verkehrsfläche besonderer Zweckbestimmung"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_baugebteilfl_ref">
+    <property name="serverLayerId" value="bp_baugebteilfl"/>
+    <property name="label" value="BP: Baugebietsteilfläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_lwfl_ref">
+    <property name="serverLayerId" value="bp_lwfl"/>
+    <property name="label" value="BP: Landwirtschaftsfläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_strverksfl_ref">
+    <property name="serverLayerId" value="bp_strverksfl"/>
+    <property name="label" value="BP: Straßenverkehrsfläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientlayer_bp_waldfl_ref">
+    <property name="serverLayerId" value="bp_waldfl"/>
+    <property name="label" value="BP: Waldfläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+
+
+    <property name="aggregationId" value="bp_planfl"/>
+  </bean>
+
+</beans>
+	

@@ -1,0 +1,237 @@
+<!-- ~ This is part of Geomajas, a GIS framework, http://www.geomajas.org/. ~ ~ Copyright 2008-2013 Geosparc nv, http://www.geosparc.com/, 
+  Belgium. ~ ~ The program is available in open source according to the GNU Affero ~ General Public License. All contributions 
+  in this program are covered ~ by the Geomajas Contributors License Agreement. For full licensing ~ details, see LICENSE.txt 
+  in the project root. -->
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+  <context:component-scan base-package="de.latlon" name-generator="org.geomajas.spring.GeomajasBeanNameGenerator"/>
+  <bean name="security.securityInfo" class="org.geomajas.security.SecurityInfo">
+    <property name="loopAllServices" value="false"/>
+    <property name="securityServices">
+      <list>
+        <bean class="org.geomajas.security.allowall.AllowAllSecurityService"/>
+      </list>
+    </property>
+  </bean>
+  <bean name="app" class="org.geomajas.configuration.client.ClientApplicationInfo">
+    <property name="maps">
+      <list>
+        <ref bean="mapMain"/>
+        <ref bean="mapOverview"/>
+      </list>
+    </property>
+    <property name="widgetInfo">
+      <map>
+        <entry key="ribbon-bar-1">
+          <bean name="ribbon-bar-1" class="org.geomajas.widget.utility.configuration.RibbonBarInfo">
+            <property name="groups">
+              <list>
+                <bean class="org.geomajas.widget.utility.configuration.RibbonGroupInfo"
+                      name="ribbongroup-default-navigatie">
+                  <property name="title" value=""/>
+                  <property name="columns">
+                    <list>
+                      <bean class="org.geomajas.widget.utility.configuration.RibbonColumnInfo">
+                        <property name="type" value="ToolbarActionButton"/>
+                        <property name="tools">
+                          <list>
+                            <ref bean="ZoomToRectangleMode"/>
+                          </list>
+                        </property>
+                      </bean>
+                      <bean class="org.geomajas.widget.utility.configuration.RibbonColumnInfo">
+                        <property name="type" value="ToolbarActionButton"/>
+                        <property name="tools">
+                          <list>
+                            <ref bean="PanMode"/>
+                          </list>
+                        </property>
+                        <property name="parameters">
+                          <list>
+                            <bean class="org.geomajas.configuration.Parameter">
+                              <property name="name" value="selected"/>
+                              <property name="value" value="true"/>
+                            </bean>
+                          </list>
+                        </property>
+                      </bean>
+                      <bean class="org.geomajas.widget.utility.configuration.RibbonColumnInfo">
+                        <property name="type" value="ToolbarActionButton"/>
+                        <property name="tools">
+                          <list>
+                            <ref bean="MapRefresh"/>
+                          </list>
+                        </property>
+                      </bean>
+                      <bean class="org.geomajas.widget.utility.configuration.RibbonColumnInfo">
+                        <property name="type" value="ToolbarActionList"/>
+                        <property name="tools">
+                          <list>
+                            <ref bean="ZoomPrevious"/>
+                            <ref bean="ZoomNext"/>
+                          </list>
+                        </property>
+                      </bean>
+                    </list>
+                  </property>
+                </bean>
+                <bean class="org.geomajas.widget.utility.configuration.RibbonGroupInfo"
+                      name="ribbongroup-default-informatie">
+                  <property name="columns">
+                    <list>
+                      <bean class="org.geomajas.widget.utility.configuration.RibbonColumnInfo">
+                        <property name="type" value="ToolbarActionButton"/>
+                        <property name="tools">
+                          <list>
+                            <ref bean="MultilayerFeatureInfoMode"/>
+                          </list>
+                        </property>
+                        <property name="parameters">
+                          <list>
+                            <bean class="org.geomajas.configuration.Parameter">
+                              <property name="name" value="selected"/>
+                              <property name="value" value="false"/>
+                            </bean>
+                            <bean class="org.geomajas.configuration.Parameter">
+                              <property name="name" value="pixelTolerance"/>
+                              <property name="value" value="5"/>
+                            </bean>
+                            <bean class="org.geomajas.configuration.Parameter">
+                              <property name="name" value="displayFormat"/>
+                              <property name="value" value="text/html"/>
+                            </bean>
+                          </list>
+                        </property>
+                      </bean>
+                      <bean class="org.geomajas.widget.utility.configuration.RibbonColumnInfo">
+                        <property name="type" value="ToolbarActionButton"/>
+                        <property name="tools">
+                          <list>
+                            <ref bean="MeasureDistanceMode"/>
+                          </list>
+                        </property>
+                      </bean>
+                      <bean class="org.geomajas.widget.utility.configuration.RibbonColumnInfo">
+                        <property name="type" value="ToolbarActionButton"/>
+                        <property name="tools">
+                          <list>
+                            <ref bean="MeasureAreaMode"/>
+                          </list>
+                        </property>
+                      </bean>
+                    </list>
+                  </property>
+                </bean>
+                <bean class="org.geomajas.widget.utility.configuration.RibbonGroupInfo"
+                      name="ribbongroup-default-algemeen">
+                  <property name="columns">
+                    <list>
+                      <bean class="org.geomajas.widget.utility.configuration.RibbonColumnInfo">
+                        <property name="type" value="ToolbarActionButton"/>
+                        <property name="tools">
+                          <list>
+                            <ref bean="ShowDefaultPrint"/>
+                          </list>
+                        </property>
+                      </bean>
+                    </list>
+                  </property>
+                </bean>
+                <bean class="org.geomajas.widget.utility.configuration.RibbonGroupInfo"
+                      name="ribbongroup-default-zoeken">
+                  <property name="columns">
+                    <list>
+                      <bean class="org.geomajas.widget.utility.configuration.RibbonColumnInfo">
+                        <property name="type" value="ToolbarActionButton"/>
+                        <property name="tools">
+                          <list>
+                            <ref bean="GeometricSearch"/>
+                          </list>
+                        </property>
+                      </bean>
+                      <bean class="org.geomajas.widget.utility.configuration.RibbonColumnInfo">
+                        <property name="type" value="ToolbarActionButton"/>
+                        <property name="tools">
+                          <list>
+                            <ref bean="AttributeSearch"/>
+                          </list>
+                        </property>
+                      </bean>
+                      <bean class="org.geomajas.widget.utility.configuration.RibbonColumnInfo">
+                        <property name="type" value="ToolbarActionButton"/>
+                        <property name="tools">
+                          <list>
+                            <ref bean="CombinedSearch"/>
+                          </list>
+                        </property>
+                      </bean>
+                    </list>
+                  </property>
+                </bean>
+              </list>
+            </property>
+          </bean>
+        </entry>
+        <entry key="ribbon-scaleselector">
+          <bean name="ribbon-scaleselector" class="org.geomajas.widget.utility.configuration.RibbonBarInfo">
+            <property name="groups">
+              <list>
+                <bean class="org.geomajas.widget.utility.configuration.RibbonGroupInfo"
+                      name="ribbongroup-default-scale">
+                  <property name="columns">
+                    <list>
+                      <bean class="org.geomajas.widget.utility.configuration.RibbonColumnInfo">
+                        <property name="type" value="ToolbarActionButton"/>
+                        <property name="tools">
+                          <list>
+                            <bean name="ScaleSelectTool" class="org.geomajas.configuration.client.ClientToolInfo">
+                              <property name="toolId" value="ScaleSelect"/>
+                              <property name="parameters">
+                                <list>
+                                  <bean class="org.geomajas.configuration.Parameter">
+                                    <property name="name" value="verticalAlignment"/>
+                                    <property name="value" value="center"/>
+                                  </bean>
+                                  <bean class="org.geomajas.configuration.Parameter">
+                                    <property name="name" value="significantDigits"/>
+                                    <property name="value" value="4"/>
+                                  </bean>
+                                </list>
+                              </property>
+                            </bean>
+                          </list>
+                        </property>
+                      </bean>
+                    </list>
+                  </property>
+                </bean>
+              </list>
+            </property>
+          </bean>
+        </entry>
+        <entry key="ribbon-coorddisplay">
+          <bean name="ribbon-coorddisplay" class="org.geomajas.widget.utility.configuration.RibbonBarInfo">
+            <property name="groups">
+              <list>
+                <bean class="org.geomajas.widget.utility.configuration.RibbonGroupInfo"
+                      name="ribbongroup-default-zoeken">
+                  <property name="columns">
+                    <list>
+                      <bean class="org.geomajas.widget.utility.configuration.RibbonColumnInfo">
+                        <property name="type" value="MouseLocationRibbonColumn"/>
+                      </bean>
+                    </list>
+                  </property>
+                </bean>
+              </list>
+            </property>
+          </bean>
+        </entry>
+      </map>
+    </property>
+  </bean>
+  <bean name="aggregationService" class="org.geomajas.layer.wms.WmsAggregationLayerServiceImpl"/>
+</beans>

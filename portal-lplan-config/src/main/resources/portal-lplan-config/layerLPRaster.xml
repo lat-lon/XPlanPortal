@@ -1,0 +1,41 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+  <bean name="lpraster" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layerWmsLPRasterInfo"/>
+    <!-- When configuring your own applications, please do not use this WMS server -->
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services/wms"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsGmlSupport" value="false"/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="false"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <bean name="layerWmsLPRasterInfo" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="lplanraster_sortiert"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+
+
+</beans>

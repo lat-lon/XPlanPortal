@@ -1,0 +1,511 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+  <bean name="featureCollectionRetriever"
+        class="org.geomajas.layer.wms.feature.FeatureCollectionRetriever"/>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpPlan"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_Plan&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpBereich"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_Bereich&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpFestsBaugeb"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_FestsetzungenBaugebiet&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpGruenFlaeche"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_GruenFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpAusgleichsfl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_AbgrabungsFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpAbstandsfl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_AbstandsFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpAufschuettsfl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_AufschuettungsFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpAusgleich"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_Ausgleich&amp;resulttype=hits"/>
+  </bean>
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpAusgleichsMass"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_AusgleichsMassnahme&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpBahnVerkehr"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_BahnVerkehr&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpBauGrenze"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_BauGrenze&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpBauLinie"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_BauLinie&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpBauGebiet"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_Baugebiet&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpBauGebTeilFl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_BaugebietsTeilFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpBauschutzbereich"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_Bauschutzbereich&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpDenkmscheinzanlpt"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_DenkmalschutzEinzelanlagePunkt&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpDenkmschensfl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_DenkmalschutzEnsembleFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpEinfPt"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_EinfahrtPunkt&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpEinfBerLin"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_EinfahrtsbereichLinie&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpErhsBerFl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_ErhaltungsBereichFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpFachgesetz"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_Fachgesetz&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpErneuerbenergiefl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_ErneuerbareEnergieFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpFirstrilin"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_FirstRichtungsLinie&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpFoerderfl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_FoerderungsFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpFreifl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_FreiFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpGebaeudefl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_GebaeudeFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpGembedarfsfl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_GemeinbedarfsFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpGemanlfl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_GemeinschaftsanlagenFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpGenobj"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_GenerischesObjekt&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpGewfl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_GewaesserFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpGrabungsschutzgeb"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_Grabungsschutzgebiet&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpHoehenpt"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_HoehenPunkt&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpImmsschutz"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_Immissionsschutz&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpKennzsfl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_KennzeichnungsFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpLaermschutzber"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_Laermschutzbereich&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpLuftreinhfl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_LuftreinhalteFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpLuftverkfl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_LuftverkehrFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpNebenanlausschlfl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_NebenanlagenAusschlussFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpNebenanlfl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_NebenanlagenFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpAnpflanzbinderh"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_AnpflanzungBindungErhaltung&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpLwlin"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_LandwirtschaftsLinie&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpSchutzpflentwfl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_SchutzPflegeEntwicklungsFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpBerohneeinausflin"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_BereichOhneEinAusfahrtLinie&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpNutzartgr"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_NutzungsartenGrenze&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpVerentsorgungsleitlin"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_VerEntsorgungsleitungLinie&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpWegerecht"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_Wegerecht&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpSpispoanlfl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_SpielSportanlagenFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpSchutzgeb"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_Schutzgebiet&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpVorbhwsfl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_VorbHochwSchutzFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpAbgrabungsfl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_AbgrabungsFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpBsfl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_BodenschaetzeFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpStrbegrlin"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_StrassenbegrenzungsLinie&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpVerentsorgung"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_VerEntsorgung&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverbBpUeberbaubgrundstsfl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_UeberbaubareGrundstuecksFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpPersgrbestfl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_PersGruppenBestimmteFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpStrkoerper"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_Strassenkoerper&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpTechbestfl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_TechnikBestimmteFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpWrlfestsfl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_WasserrechtlicheFestsetzungsFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpWwssfl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_WasserwirtschaftsFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpSchutzpflentwmassn"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_SchutzPflegeEntwicklungsMassnahme&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpBesnutzzweckfl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_BesondererNutzungszweckFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpSpeziellebauweise"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_SpezielleBauweise&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpRekultivierungsfl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_RekultivierungsFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpUnverbindlvormerk"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_UnverbindlicheVormerkung&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpTextlfestsfl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_TextlicheFestsetzungsFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpVerentsorgungsfl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_VerEntsorgungsFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpVerksflbeszwb"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_VerkehrsflaecheBesondererZweckbestimmung&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpLwfl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_LandwirtschaftsFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpStrverksfl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_StrassenVerkehrsFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverBpWaldfl"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:BP_WaldFlaeche&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverXpPto"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:XP_PTO&amp;resulttype=hits"/>
+  </bean>
+
+  <bean name="numberOfFeaturesInEnvelopeRetrieverXpLto"
+        class="org.geomajas.layer.wms.feature.NumberOfFeaturesInEnvelopeFromWfsRetriever">
+    <property name="featureCollectionRetriever" ref="featureCollectionRetriever"/>
+    <property name="wfsRequestUrlForBboxFeatureHits"
+              value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansynwfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typename=xplan:XP_LTO&amp;resulttype=hits"/>
+  </bean>
+
+</beans>
