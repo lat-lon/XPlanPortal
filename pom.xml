@@ -30,6 +30,7 @@
     <module>portal-bplan-config</module>
     <module>portal-fplan-config</module>
     <module>portal-lplan-config</module>
+    <module>portal-documentation</module>
   </modules>
 
   <profiles>

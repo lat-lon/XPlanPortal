@@ -1,0 +1,25 @@
+
+== Benutzerhandbuch
+
+include::portal.adoc[]
+
+[[bekannte-probleme]]
+=== Bekannte Probleme im Mozilla Firefox
+
+Derzeit ist die Nutzbarkeit der XPlan Portale unter Windows und Linux
+mit einigen Mozilla Firefox Version nur eingeschränkt möglich. Bei
+häufiger Interaktion mit der Karte (z.B. durch zoomen oder verschieben
+des Kartenausschnitts) kann es zu Bildfehlern und Abstürzen kommen. Es
+sind insbesondere die Versionen 35, 37 und 38 des Mozilla Firefox
+betroffen.
+
+NOTE: Problem resultiert aus einer hohen Speicherallokation und einer
+langsamen Freisetzung des allokierten Speichers durch den Firefox. Somit
+tritt das Problem auf, wenn viele speicherintensive Interaktionen
+innerhalb kurzer Zeit durchgeführt werden (z.B. zoomen oder verschieben
+des Kartenausschnitts). Wenn solche Interaktionen nicht innerhalb
+kürzester Zeit direkt hintereinander ausgeführt werden, tritt der Fehler
+nicht auf, da der Speicher nach einer gewissen Zeit wieder automatisch
+freigesetzt wird. Zudem sind PCs mit wenig Arbeitsspeicher (1-2 GB RAM)
+stärker betroffen als welche mit größerem Arbeitsspeicher (mehr als 4 GB
+RAM).
