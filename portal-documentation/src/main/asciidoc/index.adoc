@@ -9,8 +9,8 @@
 
 toc::[]
 
-include::license.adoc[]
+include::01_einfuehrung.adoc[]
 
-include::betriebshandbuch.adoc[]
+include::02_betriebshandbuch.adoc[]
 
-include::benutzerhandbuch.adoc[]
+include::03_benutzerhandbuch.adoc[]
