@@ -405,8 +405,8 @@
 
   <licenses>
     <license>
-      <name>GNU Lesser General Public License (LGPL), version 2.1</name>
-      <url>http://www.gnu.org/licenses/lgpl-2.1.html</url>
+      <name>GNU Affero General Public License Version 3, 19 November 2007</name>
+      <url>http://www.gnu.org/licenses/agpl-3.0.en.html</url>
       <distribution>repo</distribution>
     </license>
   </licenses>
