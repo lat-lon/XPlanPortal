@@ -6,8 +6,8 @@
 
   <parent>
     <groupId>de.latlon.product.xplanbox</groupId>
-    <artifactId>xplan-portals</artifactId>
-    <version>2.3-SNAPSHOT</version>
+    <artifactId>xplan-portal</artifactId>
+    <version>2.5-SNAPSHOT</version>
   </parent>
 
   <dependencies>
