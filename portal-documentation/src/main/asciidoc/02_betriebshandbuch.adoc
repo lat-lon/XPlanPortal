@@ -128,9 +128,9 @@ Für die Konfiguration der XPlanPortale werden die Verweise auf die
 Konfigurations-JARs der Portale eingetragen, getrennt mit einem
 Doppelpunkt (__:__):
 
-+
+----
 CLASSPATH=<root>/.deegree/xplan-bplan-config-1.0.jar:<root>/.deegree/xplan-fplan-config-1.0.jar:<root>/.deegree/xplan-lplan-config-1.0.jar
-+
+----
 
 NOTE: Es müssen ggf. Zeilenumbrüche entfernt werden.
 
@@ -145,9 +145,9 @@ unter _common.loader_ eingetragen werden, getrennt mit einem Komma
 (__,__). Die Tomcat eigenen JAR Dateien, müssen unbedingt beibehalten
 werden. :
 
-+
+----
 common.loader=C:\.deegree\xplan-bplan-config-1.0.jar;,C:\.deegree\xplan-fplan-config-1.0.jar;,C:\.deegree\xplan-lplan-config-1.0.jar;,$\{catalina.base}\lib,$\{catalina.base}\lib\__.jar,$\{catalina.home}\lib,$\{catalina.home}\lib\__.jar
-+
+----
 
 
 [Anwendung starten]
