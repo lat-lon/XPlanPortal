@@ -160,29 +160,28 @@ Tomcat-Installationen ausgeführt werden:
 ~/tomcat7/bin/catalina.sh [start | stop]
 ----
 
-[Migration der Anwendung (Beispiele)]
-=== Migration der Anwendung (Beispiele)
+=== Konfiguration des XPlanPortal
 
-Bei einem Hostumzug, bei dem sich der Hostname des Servers ändert, muss
-die URL in mehreren Konfigurationen angepasst werden, damit die
-Funktionalität der Anwendungen gewährleistet ist. Dabei müssen folgende
-Anpassungen erfolgen:
+Alle Konfigurationsdateien der XPlanPortale liegen im _.deegree_ des
+Benutzers und werden im Folgenden als _<portal-config-jar>_ benannt. Für
+die allgemeine Konfiguration der XPlanPortale wird außerdem auf die
+geomajas Dokumentation (http://www.geomajas.org/geomajas/docs)
+verwiesen.
+
 
 [[fuer-die-planungs-portale]]
-==== Für die Planungs-Portale:
+==== Konfiguration des XPlanWMS aus der xPlanBox:
+
+Die URL des XPlanWMS muss in den folgenden Dateien in den jar-Datei der Konfigurationen (_.deegree/portal-configuration/<portal>-config.jar_) angepasst werden:
 
 ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
-* _layer[B|F|L]Plan.xml_, _layer[B|F|L]PlanWFS.xml_, _layer[B|F|L]PRaster.xml_ und _featureHitsRetriever[B|F|L]P.xml_ (in der
-jeweiligen jar-Datei der XPlanPortal-Webkomponenten
-_.deegree/portal-configuration/<portal>-config.jar_)
-* _dropDownList.xml_ (im Ordner der jeweiligen XPlanPortal-Webkomponente
-_<tomcat>/webapps/<portal-portalname>_)
+* _layer[B|F|L]Plan.xml_
+* _layer[B|F|L]PlanWFS.xml_
+* _layer[B|F|L]PRaster.xml_
+* _featureHitsRetriever[B|F|L]P.xml_
 ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-*Anpassung in den Dateien layer[B|F|L]Plan.xml, layer[B|F|L]PlanWFS.xml,
-layer[B|F|L]PRaster.xml und featureHitsRetriever[B|F|L]P.xml:*
-
-Für die Planungs-Portale müssen in den genannten Dateien alle Werte der
+Für die XPlanPortal-Komponenten müssen in den genannten Dateien alle Werte der
 Properties _baseWmsUrl_ (layer[B|F|L]Plan.xml und
 layer[B|F|L]PRaster.xml) bzw. _values_ (layer[B|F|L]PlanWFS.xml) und
 _wfsRequestUrlForBboxFeatureHits_ (featureHitsRetriever[B|F|L]P.xml),
@@ -198,35 +197,6 @@ Beispiel _layerBPlan.xml_:
     <property name="version" value="1.1.1" />
 ...
 ----
-
-Für mehr Details sowie Hinweise zur Bearbeitung von jar-Dateien siehe
-Kapitel <<XPlanPortal>>
-
-*Anpassungen in der Datei dropDownList.xml:*
-
-Damit ein Wechsel zwischen den Planungs-Portalen über die Dropdown Liste
-möglich ist, muss die <link>-Referenz der jeweiligen Portale angepasst
-werden.
-
-----
-<List>
-  <entry>
-    <label>Bebauungspläne</label>
-    <link>http://<host>:<port>/portal-<portalname>/</link>
-  </entry>
-  ...
-</List>
-----
-
-Für mehr Details siehe Kapitel <<XPlanPortal>>
-
-=== Konfiguration des XPlanPortal
-
-Alle Konfigurationsdateien der XPlanPortale liegen im _.deegree_ des
-Benutzers und werden im Folgenden als _<portal-config-jar>_ benannt. Für
-die allgemeine Konfiguration der XPlanPortale wird außerdem auf die
-geomajas Dokumentation (http://www.geomajas.org/geomajas/docs)
-verwiesen.
 
 [[wms-ebene-hinzufuegen]]
 ==== WMS-Ebene hinzufügen
@@ -409,7 +379,6 @@ ausgeführt werden:
 [[dropdown-menue-zum-wechseln-der-portale-anpassen]]
 ==== Dropdown-Menü zum wechseln der Portale anpassen
 
-
 Innerhalb der Planungs-Portale ist es möglich, mit einem Dropdown-Menü
 zwischen den einzelnen Portalen zu wechseln. Damit dies ausgeführt
 werden kann, muss die URL der einzelnen Portale in der Datei
@@ -433,3 +402,9 @@ XPlanPortal-Webkomponente __<tomcat>/webapps/<portal-portalname>__. :
   </entry>
 </List>
 ----
+
+
+[Migration der Anwendung (Beispiele)]
+=== Migration der Anwendung
+
+Bei einem Hostumzug, bei dem sich der Hostname des Servers auf dem die XPlanPortal-Komponenten laufen ändert, muss die URL angepasst werden, damit weiterhin ein Wechsel zwischen den XPlanPortal-Komponenten über die Dropdown Liste möglich ist. Hinweise dazu finden sich im Abschnitt <<dropdown-menue-zum-wechseln-der-portale-anpassen>>.
