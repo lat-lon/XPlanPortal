@@ -153,12 +153,7 @@ common.loader=C:\.deegree\xplan-bplan-config-1.0.jar;,C:\.deegree\xplan-fplan-co
 [Anwendung starten]
 === Anwendung starten
 
-Zum Start des XPlanPortal muss das Start-Skript der
-Tomcat-Installationen ausgeführt werden:
-
-----
-~/tomcat7/bin/catalina.sh [start | stop]
-----
+Zum Start des XPlanPortal muss der Applikationsserver gestartet werden. Zuvor muss sichergestellt sein, dass alle eingebundenen WMS-Dienste (insbesondere der XPlanWMS) verfügbar sind. Andernfalls kommt es zu Fehlern beim Starten des Applikationsservers für das XPlanPortal.
 
 === Konfiguration des XPlanPortal
 
