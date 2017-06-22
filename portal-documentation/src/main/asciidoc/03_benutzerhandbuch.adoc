@@ -6,9 +6,7 @@ Die Portalkomponenten der xPlanBox dienen als zentrale Anlaufstelle zur
 Information und Recherche der bereitgestellten Planwerke. Im Folgenden
 werden der Aufbau sowie die wesentlichen Funktionen erläutert.
 
-[[aufbau-des-xplanportals]]
-=== Aufbau des XPlanPortals
-
+=== Aufbau
 
 Das XPlanPortal besteht aus drei Bereiche. Auf der linken Seite befindet
 sich die Ebenenübersicht. Dort sind alle Ebenen strukturiert
@@ -26,13 +24,9 @@ Darstellung der Ebenen mit Maßstabsleiste und einem Navigationswerkzeug.
 In der Kopfleiste des Kartenfenster befinden sich weitere Werkzeuge,
 welche im weiteren Verlauf beschrieben werden.
 
-[[funktionen-des-xplanportals]]
-=== Funktionen des XPlanPortals
+=== Funktionen
 
-
-[[wechseln-der-planart]]
 ==== Wechseln der Planart
-
 
 Über die Drop-Down-Liste kann in eine andere Planart (Bebauungspläne,
 Flächennutzungspläne und Landschaftspläne) gewechselt werden. Alternativ
@@ -41,16 +35,13 @@ werden.
 
 Die Portale können auch direkt aufgerufen werden:
 
-
 ----
 http://<host>:<port>/portal-bplan/
 http://<host>:<port>/portal-fplan/
 http://<host>:<port>/portal-lplan/
 ----
 
-[[struktur-und-funktion-der-ebenenuebersicht]]
 ==== Struktur und Funktion der Ebenenübersicht
-
 
 In der Ebenenübersicht werden alle Ebenen und Kategorien aufgelistet.
 Kategorien enthalten mehrere Ebenen. Sie sind mit einem Ordner
@@ -79,9 +70,7 @@ Zahnrad wird eingeblendet, sobald der Mauszeiger über eine Ebene führt.
 Die Deckkraft der Ebenen ist manuell regulierbar und die Sichtbarkeit
 kann per Häkchen aktiv / passiv geschaltet werden.
 
-[[navigation-im-xplanportal]]
-==== Navigation im XPlanPortal
-
+==== Navigation
 
 Das Portal bietet dem Nutzer eine Vielzahl von Navigationsmöglichkeiten.
 Anhand der Übersichtskarte kann dieser sich orientieren. Es ist außerdem
@@ -110,9 +99,7 @@ werden.
 Das erneute Laden des Kartenausschnitts kann über _Karte aktualisieren_
 erfolgen.
 
-[[bedienung-der-massstabsauswahl]]
 ==== Bedienung der Maßstabsauswahl
-
 
 Die Maßstabsauswahl beinhaltet vordefinierte Maßstäbe, welche in einer
 Drop-Down-Liste ausgewählt werden können. Der Maßstab kann außerdem
@@ -127,9 +114,7 @@ Die Koordinatenanzeige zeigt die Koordinaten der Kartenposition, an der
 sich der Mauszeiger befindet. Als Koordinatensystem wird UTM Zone 33N
 (EPSG:25833) verwendet.
 
-[[bedienung-des-messwerkzeuges]]
 ==== Bedienung des Messwerkzeuges
-
 
 Es besteht die Möglichkeit Entfernungen und Flächen zu messen. Hierfür
 muss das jeweilige Bedienelement (__Entfernung messen__ bzw. __Fläche
@@ -140,16 +125,12 @@ Zwischenpunkten möglich. Die Entfernung wird in einem kleinem Fenster
 ausgegeben. Das Messen kann mit der rechten Maustaste abgebrochen
 werden.
 
-[[bedienung-der-suchfunktion]]
 ==== Bedienung der Suchfunktion
-
 
 Das XPlanPortal hat drei Suchfunktionen (__Räumliche Suche__, _Freie
 Suche_ und __Kombinierte Suche__).
 
-[[raeumliche-suche]]
 ===== Räumliche Suche
-
 
 Die _Räumliche Suche_ grenzt die Suche auf ein vorher festgelegtes
 Gebiet ein. Nachdem ein Geometrietyp (Punkt, Linie oder Fläche)
@@ -159,9 +140,7 @@ Liste angezeigt. Nach Auswahl eines Suchergebnisses, kann dieses als
 __CSV__-Datei heruntergeladen werden. Des weiteren kann eine
 Detailansicht aufgerufen und auf das Objekt gezoomt werden.
 
-[[freie-suche]]
 ===== Freie Suche
-
 
 Die _Freie Suche_ wird ohne räumliche Einschränkung ausgeführt. Zunächst
 muss eine Ebene sowie ein Attribut ausgewählt werden, welche durchsucht
@@ -171,9 +150,7 @@ Eingabe eines Wertes in das dafür vorgesehene Feld und Betätigen des
 Button __Suche__, werden die Ergebnisse aufgelistet. Bei der _Freien
 Suche_ können mehrere Bedingungen über das Zeichen _+_ angegeben werden.
 
-[[kombinierte-suche]]
 ===== Kombinierte Suche
-
 
 Die _Kombinierte Suche_ beinhaltet die _Räumliche Suche_ und _Freie
 Suche_ und dient für komplexerer Abfragen. Die Auswahl von
@@ -182,9 +159,7 @@ Es können beliebig viele Verknüpfungen von Suchbedingungen angegeben
 werden. Mit anschließendem Betätigen des Buttons _Suchen_ werden die
 Suchergebnisse aufgelistet.
 
-[[bedienung-der-objektinformationsanzeige]]
 ==== Bedienung der Objektinformationsanzeige
-
 
 Zum Abfragen von z.B. planspezifischen Eigenschaften eines Objektes
 eignet sich das Werkzeug __Sachinformation abfragen__. Zunächst muss das
@@ -193,9 +168,7 @@ durch Drücken der linken Maustaste auf das Objekt die
 Objektinformationen in einem Fenster dargestellt werden. Liefern mehrere
 Ebenen ein Ergebnis zurück, werden diese aufgelistet.
 
-[[bedienung-des-druckmoduls]]
 ==== Bedienung des Druckmoduls
-
 
 Nach Aktivierung des Bedienelements zum Drucken, öffnet sich ein Fenster
 mit einem Dialogmenü. Dort können verschiedene Einstellungen, z.B.:
@@ -210,8 +183,6 @@ _________________
 vorgenommen werden. Zusätzlich besteht die Möglichkeit, die Auflösung
 manuell oder über einen Regler anzugeben.
 
-
-[[bekannte-probleme]]
 === Bekannte Probleme im Mozilla Firefox
 
 Derzeit ist die Nutzbarkeit der XPlan Portale unter Windows und Linux

@@ -6,14 +6,11 @@ den Systemvoraussetzungen und der Installation für den Betrieb
 des XPlanPortal. Die Webanwendungen basieren auf den Komponenten des
 Open-Source-Projekts http://www.geomajas.org/[Geomajas].
 
-[Systemüberblick]
 === Systemüberblick
 
 Als zugrunde liegende Basistechnologien des XPlanPortals werden Java und Apache Tomcat verwendet.
 Zur erfolgreichen Installation müssen die in diesem Kapitel beschriebenen Voraussetzungen erfüllt werden.
 
-
-[[betriebssystem]]
 ==== Betriebssystem
 
 Als Betriebssystem kann ein beliebiges 64-bit Betriebssystem verwendet
@@ -32,8 +29,6 @@ angepasst werden.
 
 NOTE: Empfohlen wird Oracle JDK 1.7_45+.
 
-
-[[java-applikationsserver]]
 ==== Java Applikationsserver
 
 Als Applikationsserver wird Apache Tomcat in der Version 7 empfohlen.
@@ -44,15 +39,10 @@ sich grundsätzlich auf den Apache Tomcat.
 NOTE: Die minimale Anforderung an den Applikationsserver ist das Java EE 6 Web
 Profil. Empfohlen wird Apache Tomcat Version 7.0.32+.
 
-[[systemvoraussetzungen]]
 ==== Systemvoraussetzungen
 
-
-[[server]]
 ===== Server
 
-
-[[minimale-systemvoraussetzung]]
 ====== Minimale Systemvoraussetzung
 
 ________________________________________________________________________________________________________________________
@@ -64,7 +54,6 @@ QuadCore) - minimal 2,0-GHz-Prozessor mit 64 Bit
 Minimum 500 GB)
 ________________________________________________________________________________________________________________________
 
-[[empfohlene-systemkonfiguration]]
 ====== Empfohlene Systemkonfiguration
 
 ______________________________________________________________________________________________________________
@@ -76,7 +65,6 @@ OctaCore) - 3,0-GHz-Prozessor mit 64 Bit
 optional mit SSD
 ______________________________________________________________________________________________________________
 
-[[client]]
 ===== Client
 
 _____________________________________________
@@ -116,8 +104,6 @@ Im Applikationsserver muss die Konfiguration des XPlanPortals dem Tomcat bekannt
 werden. Dazu muss der Classpath um die Referenzen auf die Konfigurations-JARs der Portale erweitert werden. Wurde die Anleitung in Abschnitt <<Installation_Konfigurationsdateien>> befolgt, befinden sich die drei jar-Dateien im Verzeichnis _.deegree_ im Home-Verzeichnis des
 Nutzers.
 
-
-[[linux]]
 ===== Linux
 
 Für die Konfiguration der oben genannten Punkte muss zunächst im
@@ -134,8 +120,6 @@ CLASSPATH=<root>/.deegree/xplan-bplan-config-1.0.jar:<root>/.deegree/xplan-fplan
 
 NOTE: Es müssen ggf. Zeilenumbrüche entfernt werden.
 
-
-[[windows]]
 ===== Windows
 
 Für die Konfiguration der *XPlanPortale* wird im Verzeichnis
@@ -149,13 +133,7 @@ werden. :
 common.loader=C:\.deegree\xplan-bplan-config-1.0.jar;,C:\.deegree\xplan-fplan-config-1.0.jar;,C:\.deegree\xplan-lplan-config-1.0.jar;,$\{catalina.base}\lib,$\{catalina.base}\lib\__.jar,$\{catalina.home}\lib,$\{catalina.home}\lib\__.jar
 ----
 
-
-[Anwendung starten]
-=== Anwendung starten
-
-Zum Start des XPlanPortal muss der Applikationsserver gestartet werden. Zuvor muss sichergestellt sein, dass alle eingebundenen WMS-Dienste (insbesondere der XPlanWMS) verfügbar sind. Andernfalls kommt es zu Fehlern beim Starten des Applikationsservers für das XPlanPortal.
-
-=== Konfiguration des XPlanPortal
+=== Konfiguration
 
 Alle Konfigurationsdateien der XPlanPortale liegen im _.deegree_ des
 Benutzers und werden im Folgenden als _<portal-config-jar>_ benannt. Für
@@ -163,8 +141,6 @@ die allgemeine Konfiguration der XPlanPortale wird außerdem auf die
 geomajas Dokumentation (http://www.geomajas.org/geomajas/docs)
 verwiesen.
 
-
-[[fuer-die-planungs-portale]]
 ==== Konfiguration des XPlanWMS aus der xPlanBox:
 
 Die URL des XPlanWMS muss in den folgenden Dateien in den jar-Datei der Konfigurationen (_.deegree/portal-configuration/<portal>-config.jar_) angepasst werden:
@@ -193,9 +169,7 @@ Beispiel _layerBPlan.xml_:
 ...
 ----
 
-[[wms-ebene-hinzufuegen]]
 ==== WMS-Ebene hinzufügen
-
 
 Um eine neue WMS-Ebene hinzuzufügen, muss diese im entsprechenden
 XPlanPortal konfiguriert werden. Neue Ebenen werden in folgenden Dateien
@@ -280,9 +254,7 @@ Hinzufügen der Ebene zur Karte
 </property>
 ----
 
-[[zeichenreihenfolge-der-layer-im-kartenfenster-aendern]]
 ==== Zeichenreihenfolge der Layer im Kartenfenster ändern
-
 
 Um die Zeichenreihenfolge der Layer in der Ebenenübersicht im
 Kartenfenster zu ändern, muss in der Datei
@@ -308,9 +280,7 @@ Zeichenreihenfolge:
     ...
 ----
 
-[[statische-legenden-zu-einer-wms-ebene-hinzufuegen]]
 ==== Statische Legenden zu einer WMS-Ebene hinzufügen
-
 
 Für alle WMS-Ebenen kann ein statisches Legendenbild konfiguriert
 werden. Dazu muss in der Bean der Ebene eine Eigenschaft hinzugefügt
@@ -371,8 +341,8 @@ ausgeführt werden:
   xplan-bplan-config/<Dateiname>_
 ====
 
-[[dropdown-menue-zum-wechseln-der-portale-anpassen]]
-==== Dropdown-Menü zum wechseln der Portale anpassen
+[[dropdown-menue-zum-wechseln]]
+==== Dropdown-Menü zum Wechseln der XPlanPortal-Komponenten anpassen
 
 Innerhalb der Planungs-Portale ist es möglich, mit einem Dropdown-Menü
 zwischen den einzelnen Portalen zu wechseln. Damit dies ausgeführt
@@ -398,8 +368,10 @@ XPlanPortal-Webkomponente __<tomcat>/webapps/<portal-portalname>__. :
 </List>
 ----
 
+=== Anwendung starten
 
-[Migration der Anwendung (Beispiele)]
+Zum Start des XPlanPortal muss der Applikationsserver gestartet werden. Zuvor muss sichergestellt sein, dass alle eingebundenen WMS-Dienste (insbesondere der XPlanWMS) verfügbar sind. Andernfalls kommt es zu Fehlern beim Starten des Applikationsservers für das XPlanPortal.
+
 === Migration der Anwendung
 
-Bei einem Hostumzug, bei dem sich der Hostname des Servers auf dem die XPlanPortal-Komponenten laufen ändert, muss die URL angepasst werden, damit weiterhin ein Wechsel zwischen den XPlanPortal-Komponenten über die Dropdown Liste möglich ist. Hinweise dazu finden sich im Abschnitt <<dropdown-menue-zum-wechseln-der-portale-anpassen>>.
+Bei einem Hostumzug, bei dem sich der Hostname des Servers auf dem die XPlanPortal-Komponenten laufen ändert, muss die URL angepasst werden, damit weiterhin ein Wechsel zwischen den XPlanPortal-Komponenten über die Dropdown Liste möglich ist. Hinweise dazu finden sich im Abschnitt <<dropdown-menue-zum-wechseln>>.
