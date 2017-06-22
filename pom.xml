@@ -364,9 +364,9 @@
   </dependencyManagement>
 
   <scm>
-    <connection>scm:git:http://criador:8080/scm/git/xplanbox</connection>
-    <developerConnection>scm:git:http://criador:8080/scm/git/xplanbox</developerConnection>
-    <url>http://criador:8080/scm/git/xplanbox</url>
+    <connection>scm:git:git@github.com:lat-lon/XPlanPortal.git</connection>
+    <developerConnection>scm:git:git@github.com:lat-lon/XPlanPortal.git</developerConnection>
+    <url>https://github.com/lat-lon/XPlanPortal</url>
     <tag>HEAD</tag>
   </scm>
 
