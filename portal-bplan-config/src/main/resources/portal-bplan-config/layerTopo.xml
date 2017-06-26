@@ -1,0 +1,40 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+  <bean name="topo" class="org.geomajas.layer.wms.WmsLayer">
+    <property name="layerInfo" ref="layerTopoBGInfo"/>
+    <property name="baseWmsUrl" value="http://isk.geobasis-bb.de/ows/dnm.php?"/>
+    <property name="staticLegendImagePath" value="org/geomajas/internal/image/topo.png"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=",,,,,,,,"/>
+    <property name="enableFeatureInfoSupport" value="false"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="layerTopoBGInfo" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName"
+              value="bg,siedlung,vegetation,gewaesser,verkehrsobjekte,transport,gewaessernamen,strassennamen,ortsnamen"/>
+    <property name="tileWidth" value="512"/>
+    <property name="tileHeight" value="512"/>
+  </bean>
+
+</beans>

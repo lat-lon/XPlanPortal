@@ -1,0 +1,16 @@
+:doctype: book
+:encoding: utf-8
+:toc: macro
+:numbered:
+:toc-title: Inhaltsverzeichnis
+:appendix-caption: Anhang
+
+= XPlanPortal
+
+toc::[]
+
+include::01_einfuehrung.adoc[]
+
+include::02_betriebshandbuch.adoc[]
+
+include::03_benutzerhandbuch.adoc[]

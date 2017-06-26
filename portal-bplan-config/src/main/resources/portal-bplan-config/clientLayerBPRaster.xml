@@ -1,0 +1,17 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerBPRaster">
+    <property name="serverLayerId" value="bpraster"/>
+    <property name="label" value="Rasterpläne"/>
+    <property name="visible" value="false"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerRoederland">
+    <property name="serverLayerId" value="roederland"/>
+    <property name="label" value="Würdenhain"/>
+    <property name="visible" value="false"/>
+    <property name="style" value="1"/>
+  </bean>
+</beans>
+	

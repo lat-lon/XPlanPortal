@@ -1,0 +1,74 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+  <bean name="layerOverview" class="org.geomajas.layer.shapeinmem.ShapeInMemLayer">
+    <property name="layerInfo" ref="layerOverviewInfo"/>
+    <property name="url" value="classpath:portal-fplan-config/shape/lkee_grenzen.shp"/>
+  </bean>
+
+  <bean name="layerOverviewInfo" class="org.geomajas.configuration.VectorLayerInfo">
+    <property name="layerType" value="POLYGON"/>
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="232396"/>
+        <property name="y" value="5648843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="featureInfo" ref="layerOverviewFeatureInfo"/>
+    <property name="namedStyleInfos">
+      <list>
+        <ref bean="layerOverviewStyleInfo"/>
+      </list>
+    </property>
+  </bean>
+
+  <bean class="org.geomajas.configuration.FeatureInfo" name="layerOverviewFeatureInfo">
+    <property name="dataSourceName" value="lkee_grenzen"/>
+    <property name="identifier">
+      <bean class="org.geomajas.configuration.PrimitiveAttributeInfo">
+        <property name="label" value="gml_id"/>
+        <property name="name" value="gml_id"/>
+        <property name="type" value="STRING"/>
+      </bean>
+    </property>
+    <property name="geometryType">
+      <bean class="org.geomajas.configuration.GeometryAttributeInfo">
+        <property name="name" value="the_geom"/>
+        <property name="editable" value="false"/>
+      </bean>
+    </property>
+
+    <property name="attributes">
+      <list>
+        <bean class="org.geomajas.configuration.PrimitiveAttributeInfo">
+          <property name="label" value="gml_id"/>
+          <property name="name" value="gml_id"/>
+          <property name="editable" value="false"/>
+          <property name="identifying" value="true"/>
+          <property name="type" value="STRING"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <bean class="org.geomajas.configuration.NamedStyleInfo" name="layerOverviewStyleInfo">
+    <property name="featureStyles">
+      <list>
+        <bean class="org.geomajas.configuration.FeatureStyleInfo">
+          <property name="name" value="Overview"/>
+          <property name="fillColor" value="#FFFFFF"/>
+          <property name="fillOpacity" value="0"/>
+          <property name="strokeColor" value="#FFFF00"/>
+          <property name="strokeOpacity" value="1.0"/>
+          <property name="strokeWidth" value="2"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+</beans>

@@ -1,0 +1,21 @@
+== Einführung
+
+=== Autoren
+
+Danilo Bretschneider, Jens Fitzke, Torsten Friebe, Dirk Stenger,
+Sebastian Goerke, Lyn Elisa Goltz, Carmen Tawalika, Jeronimo Wanhoff,
+Lena Rippolz
+
+=== Lizenz
+
+Das XPlanPortal ist unter der http://www.gnu.org/licenses/agpl-3.0.en.html[GNU Affero General Public License Version 3, 19 November 2007] veröffentlicht.
+
+=== Lizenz des Dokuments
+
+Es wird die Erlaubnis gewährt, dieses Dokument zu kopieren, zu verteilen
+und/oder zu modifizieren, unter den Bestimmungen der GNU Free
+Documentation License, Version 1.3 oder jeder späteren Version,
+veröffentlicht von der Free Software Foundation; ohne unveränderliche
+Abschnitte, ohne vordere Umschlagtexte und ohne hintere Umschlagtexte.
+Die Lizenz wird unter http://www.gnu.org/licenses/fdl-1.3
+bereitgestellt.

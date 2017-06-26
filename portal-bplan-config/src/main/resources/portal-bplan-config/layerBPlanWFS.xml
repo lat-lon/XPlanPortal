@@ -1,0 +1,206 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+  <bean name="layerBPlanWFS" class="org.geomajas.layer.geotools.GeoToolsLayer">
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="WFSDataStoreFactory:GET_CAPABILITIES_URL"/>
+          <property name="value"
+                    value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansearch?service=WFS&amp;VERSION=1.1.0&amp;request=GetCapabilities"/>
+        </bean>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="WFSDataStoreFactory:TIMEOUT"/>
+          <property name="value" value="30000"/>
+        </bean>
+      </list>
+    </property>
+    <property name="layerInfo" ref="BPlanLayerInfo"/>
+  </bean>
+  <bean name="BPlanLayerInfo" class="org.geomajas.configuration.VectorLayerInfo">
+    <property name="layerType" value="MULTIPOLYGON"/>
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="featureInfo" ref="BPlanFeatureInfo"/>
+
+  </bean>
+  <bean class="org.geomajas.configuration.FeatureInfo" name="BPlanFeatureInfo">
+    <property name="dataSourceName" value="xplan:BP_Plan"/>
+    <property name="identifier">
+      <bean class="org.geomajas.configuration.PrimitiveAttributeInfo">
+        <property name="label" value="gmlId"/>
+        <property name="name" value="gmlId"/>
+        <property name="type" value="STRING"/>
+      </bean>
+    </property>
+    <property name="geometryType">
+      <bean class="org.geomajas.configuration.GeometryAttributeInfo">
+        <property name="name" value="raeumlicherGeltungsbereich"/>
+        <property name="editable" value="false"/>
+      </bean>
+    </property>
+    <property name="attributes">
+      <list>
+        <bean class="org.geomajas.configuration.PrimitiveAttributeInfo">
+          <property name="label" value="Name"/>
+          <property name="name" value="name"/>
+          <property name="editable" value="false"/>
+          <property name="identifying" value="true"/>
+          <property name="type" value="STRING"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean class="org.geomajas.configuration.NamedStyleInfo" name="BPlanWFSStyleInfo">
+    <property name="featureStyles">
+      <list>
+        <bean class="org.geomajas.configuration.FeatureStyleInfo">
+          <property name="name" value="BPlan"/>
+          <property name="fillColor" value="#FF3333"/>
+          <property name="fillOpacity" value=".0"/>
+          <property name="strokeColor" value="#333333"/>
+          <property name="strokeOpacity" value=".0"/>
+          <property name="strokeWidth" value="0"/>
+        </bean>
+      </list>
+    </property>
+    <property name="labelStyle">
+      <bean class="org.geomajas.configuration.LabelStyleInfo">
+        <property name="labelAttributeName" value="xplansyn:name"/>
+        <property name="fontStyle">
+          <bean class="org.geomajas.configuration.FontStyleInfo">
+            <property name="color" value="#FEFEFE"/>
+            <property name="opacity" value=".0"/>
+          </bean>
+        </property>
+        <property name="backgroundStyle">
+          <bean class="org.geomajas.configuration.FeatureStyleInfo">
+            <property name="fillColor" value="#888888"/>
+            <property name="fillOpacity" value=".0"/>
+            <property name="strokeColor" value="#CC0000"/>
+            <property name="strokeOpacity" value=".0"/>
+            <property name="strokeWidth" value="0"/>
+          </bean>
+        </property>
+      </bean>
+    </property>
+  </bean>
+
+  <bean name="layerBaugebTeilWFS" class="org.geomajas.layer.geotools.GeoToolsLayer">
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="WFSDataStoreFactory:GET_CAPABILITIES_URL"/>
+          <property name="value"
+                    value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansearch?service=WFS&amp;VERSION=1.1.0&amp;request=GetCapabilities"/>
+        </bean>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="WFSDataStoreFactory:TIMEOUT"/>
+          <property name="value" value="30000"/>
+        </bean>
+      </list>
+    </property>
+    <property name="layerInfo" ref="BaugebTeilLayerInfo"/>
+  </bean>
+  <bean name="BaugebTeilLayerInfo" class="org.geomajas.configuration.VectorLayerInfo">
+    <property name="layerType" value="MULTIPOLYGON"/>
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="featureInfo" ref="BaugebTeilFeatureInfo"/>
+
+  </bean>
+  <bean class="org.geomajas.configuration.FeatureInfo" name="BaugebTeilFeatureInfo">
+    <property name="dataSourceName" value="xplan:BP_BaugebietsTeilFlaeche"/>
+    <property name="identifier">
+      <bean class="org.geomajas.configuration.PrimitiveAttributeInfo">
+        <property name="label" value="gmlId"/>
+        <property name="name" value="gmlId"/>
+        <property name="type" value="STRING"/>
+      </bean>
+    </property>
+    <property name="geometryType">
+      <bean class="org.geomajas.configuration.GeometryAttributeInfo">
+        <property name="name" value="position"/>
+        <property name="editable" value="false"/>
+      </bean>
+    </property>
+    <property name="attributes">
+      <list>
+        <bean class="org.geomajas.configuration.PrimitiveAttributeInfo">
+          <property name="label" value="zugehöriger Plan"/>
+          <property name="name" value="xpPlanName"/>
+          <property name="editable" value="false"/>
+          <property name="identifying" value="true"/>
+          <property name="type" value="STRING"/>
+        </bean>
+        <bean class="org.geomajas.configuration.PrimitiveAttributeInfo">
+          <property name="label" value="allgemeine Art der baulichen Nutzung"/>
+          <property name="name" value="allgArtDerBaulNutzung"/>
+          <property name="editable" value="false"/>
+          <property name="identifying" value="true"/>
+          <property name="type" value="STRING"/>
+        </bean>
+        <bean class="org.geomajas.configuration.PrimitiveAttributeInfo">
+          <property name="label" value="besondere Art der baulichen Nutzung"/>
+          <property name="name" value="besondereArtDerBaulNutzung"/>
+          <property name="editable" value="false"/>
+          <property name="identifying" value="true"/>
+          <property name="type" value="STRING"/>
+        </bean>
+        <bean class="org.geomajas.configuration.PrimitiveAttributeInfo">
+          <property name="label" value="Sondernutzung"/>
+          <property name="name" value="sondernutzung"/>
+          <property name="editable" value="false"/>
+          <property name="identifying" value="true"/>
+          <property name="type" value="STRING"/>
+        </bean>
+        <bean class="org.geomajas.configuration.PrimitiveAttributeInfo">
+          <property name="label" value="Abweichung von der BauNVO"/>
+          <property name="name" value="abweichungBauNVO"/>
+          <property name="editable" value="false"/>
+          <property name="identifying" value="true"/>
+          <property name="type" value="STRING"/>
+        </bean>
+        <bean class="org.geomajas.configuration.PrimitiveAttributeInfo">
+          <property name="label" value="Festsetzung der Bauweise"/>
+          <property name="name" value="bauweise"/>
+          <property name="editable" value="false"/>
+          <property name="identifying" value="true"/>
+          <property name="type" value="STRING"/>
+        </bean>
+        <bean class="org.geomajas.configuration.PrimitiveAttributeInfo">
+          <property name="label" value="Detaillierte Festsetzung der Bauweise"/>
+          <property name="name" value="bebauungsArt"/>
+          <property name="editable" value="false"/>
+          <property name="identifying" value="true"/>
+          <property name="type" value="STRING"/>
+        </bean>
+        <bean class="org.geomajas.configuration.PrimitiveAttributeInfo">
+          <property name="label" value="Festsetzung der Bebauung der vorderen Grundstücksgrenze"/>
+          <property name="name" value="bebauungVordereGrenze"/>
+          <property name="editable" value="false"/>
+          <property name="identifying" value="true"/>
+          <property name="type" value="STRING"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+
+</beans>

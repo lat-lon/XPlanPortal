@@ -1,0 +1,506 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+  <bean name="fpraster" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layerWmsFPRasterInfo"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsGmlSupport" value="false"/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="false"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <bean name="layerWmsFPRasterInfo" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="fplanraster_sortiert"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+
+  <!-- Elsterland -->
+
+  <bean name="fpeichholz" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layerWmsFPEichholzInfo"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsGmlSupport" value="false"/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="false"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <bean name="layerWmsFPEichholzInfo" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="FNP_Elsterland_Eichholz_Droessig"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+
+  <bean name="fpfischwasser" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layerWmsFPFischwasserInfo"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsGmlSupport" value="false"/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="false"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <bean name="layerWmsFPFischwasserInfo" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="FNP_Elsterland_Fischwasser"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+
+  <bean name="fpgruhno" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layerWmsFPGruhnoInfo"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsGmlSupport" value="false"/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="false"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <bean name="layerWmsFPGruhnoInfo" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="FNP_Elsterland_Gruhno"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+
+
+  <bean name="fplindena" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layerWmsFPLindenaInfo"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsGmlSupport" value="false"/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="false"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <bean name="layerWmsFPLindenaInfo" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="FNP_Elsterland_Lindena"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+
+  <bean name="fpoppelhain" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layerWmsFPoppelhainInfo"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsGmlSupport" value="false"/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="false"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <bean name="layerWmsFPoppelhainInfo" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="FNP_Elsterland_Oppelhain"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+
+  <bean name="fpschadewitz" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layerWmsFPschadewitzInfo"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsGmlSupport" value="false"/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="false"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <bean name="layerWmsFPschadewitzInfo" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="FNP_Elsterland_Schadewitz"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+
+  <bean name="fprueckersdorf" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layerWmsFPrueckersdorfInfo"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsGmlSupport" value="false"/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="false"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <bean name="layerWmsFPrueckersdorfInfo" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="FNP_Elsterland_Rueckersdorf"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+
+  <bean name="fpschilda" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layerWmsFPschildaInfo"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsGmlSupport" value="false"/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="false"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <bean name="layerWmsFPschildaInfo" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="FNP_Elsterland_Schilda"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+
+  <bean name="fpschoenborn" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layerWmsFPschoenbornInfo"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsGmlSupport" value="false"/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="false"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <bean name="layerWmsFPschoenbornInfo" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="FNP_Elsterland_Schoenborn"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+
+  <bean name="fptroebitz" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layerWmsFPtroebitzInfo"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsGmlSupport" value="false"/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="false"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <bean name="layerWmsFPtroebitzInfo" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="FNP_Elsterland_Troebitz"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+
+  <!-- Schradenland -->
+
+  <bean name="fpgroeden" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layerWmsFPgroedenInfo"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsGmlSupport" value="false"/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="false"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <bean name="layerWmsFPgroedenInfo" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="FNP_Groeden"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+
+  <bean name="fpgrossthiemig" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layerWmsFPgrossthiemigInfo"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsGmlSupport" value="false"/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="false"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <bean name="layerWmsFPgrossthiemigInfo" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="FNP_Grossthiemig"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+
+  <bean name="fphirschfeld" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layerWmsFPhirschfeldInfo"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsGmlSupport" value="false"/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="false"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <bean name="layerWmsFPhirschfeldInfo" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="FNP_Hirschfeld"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+
+  <bean name="fpmerzdorf" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layerWmsFPmerzdorfInfo"/>
+    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsGmlSupport" value="false"/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="false"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <bean name="layerWmsFPmerzdorfInfo" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="FNP_Merzdorf"/>
+    <property name="tileWidth" value="1024"/>
+    <property name="tileHeight" value="1024"/>
+  </bean>
+
+</beans>

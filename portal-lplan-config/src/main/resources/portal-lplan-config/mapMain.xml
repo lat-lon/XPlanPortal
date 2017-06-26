@@ -1,0 +1,317 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+
+  <bean name="mapMain" class="org.geomajas.configuration.client.ClientMapInfo">
+    <property name="backgroundColor" value="#FFFFFF"/>
+    <property name="crs" value="EPSG:25833"/>
+    <property name="scaleBarEnabled" value="true"/>
+    <property name="panButtonsEnabled" value="true"/>
+    <property name="scaleConfiguration">
+      <bean class="org.geomajas.configuration.client.ScaleConfigurationInfo">
+        <property name="maximumScale" value="1:50"/>
+        <property name="zoomLevels">
+          <list>
+            <value>1:300000</value>
+            <value>1:250000</value>
+            <value>1:200000</value>
+            <value>1:150000</value>
+            <value>1:100000</value>
+            <value>1:75000</value>
+            <value>1:50000</value>
+            <value>1:35000</value>
+            <value>1:25000</value>
+            <value>1:20000</value>
+            <value>1:15000</value>
+            <value>1:10000</value>
+            <value>1:7500</value>
+            <value>1:5000</value>
+            <value>1:2500</value>
+            <value>1:1000</value>
+            <value>1:500</value>
+            <value>1:250</value>
+            <value>1:100</value>
+            <value>1:50</value>
+          </list>
+        </property>
+      </bean>
+    </property>
+    <property name="pointSelectStyle">
+      <bean class="org.geomajas.configuration.FeatureStyleInfo">
+        <property name="fillColor" value="#FFFF00"/>
+      </bean>
+    </property>
+    <property name="polygonSelectStyle">
+      <bean class="org.geomajas.configuration.FeatureStyleInfo">
+        <property name="fillColor" value="#FFFF00"/>
+        <property name="fillOpacity" value=".5"/>
+      </bean>
+    </property>
+    <property name="lineSelectStyle">
+      <bean class="org.geomajas.configuration.FeatureStyleInfo">
+        <property name="fillOpacity" value="0"/>
+        <property name="strokeColor" value="#FF6600"/>
+        <property name="strokeOpacity" value="1"/>
+      </bean>
+    </property>
+    <property name="initialBounds">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="362240"/>
+        <property name="y" value="5691097"/>
+        <property name="width" value="63196"/>
+        <property name="height" value="59431"/>
+      </bean>
+    </property>
+    <property name="layers">
+      <list>
+        <ref bean="clientlayerluftbild"/>
+        <ref bean="clientlayerluftbilda"/>
+        <ref bean="clientlayertopo"/>
+
+        <!--
+        <ref bean="clientLayerBPRaster" />s
+        <ref bean="clientLayerRoederland" />
+        -->
+
+        <ref bean="clientLayerLPlan"/>
+        <ref bean="clientLayerLPBereich"/>
+        <ref bean="clientLayerLPAbgrenzung"/>
+        <ref bean="clientLayerLPAllgGruenflaeche"/>
+        <ref bean="clientLayerLPAusgleich"/>
+        <ref bean="clientLayerLPBiotopverbundflaeche"/>
+        <ref bean="clientLayerLPBodenschutzrecht"/>
+        <ref bean="clientLayerLPDenkmalschutzrecht"/>
+        <ref bean="clientLayerLPErholungFreizeit"/>
+        <ref bean="clientLayerLPForstrecht"/>
+        <ref bean="clientLayerLPGenerischesObjekt"/>
+        <ref bean="clientLayerLPNutzungsAusschluss"/>
+        <ref bean="clientLayerLPNutzungserfordernisRegelung"/>
+        <ref bean="clientLayerLPPlanerischeVertiefung"/>
+        <ref bean="clientLayerLPSchutzobjektBundesrecht"/>
+        <ref bean="clientLayerLPSchutzobjektInternatRecht"/>
+        <ref bean="clientLayerLPSchutzPflegeEntwicklung"/>
+        <ref bean="clientLayerLPSonstigesRecht"/>
+        <ref bean="clientLayerLPWasserrechtGemeingebrEinschraenkungNaturschutz"/>
+        <ref bean="clientLayerLPWasserrechtSchutzgebiet"/>
+        <ref bean="clientLayerLPWasserrechtSonstige"/>
+        <ref bean="clientLayerLPWasserrechtWirtschaftAbflussHochwSchutz"/>
+        <ref bean="clientLayerLPZwischennutzung"/>
+        <ref bean="clientLayerLPXpPto"/>
+        <ref bean="clientLayerLPXpLto"/>
+        <ref bean="clientLayerLPXpFpo"/>
+        <ref bean="clientLayerLPXpLpo"/>
+        <ref bean="clientLayerLPXpPpo"/>
+        <ref bean="clientLayerLPSchutzobjbundesrechtsym"/>
+        <ref bean="clientLayerLPSchutzobjinterrechtsym"/>
+        <ref bean="clientLayerLPDenkmschrechtsym"/>
+        <ref bean="clientLayerLPAusgleichsym"/>
+        <ref bean="clientLayerLPWrschutzgebsym"/>
+        <ref bean="clientLayerLPWrgemgebreinschrnatssym"/>
+        <ref bean="clientLayerLPWrwirtschabflusshwssym"/>
+        <ref bean="clientLayerLPForstrechtsym"/>
+        <ref bean="clientLayerLPNutzerforderregelungsym"/>
+        <ref bean="clientLayerLPlanWFS"/>
+        <!--
+        <ref bean="clientLayerBaugebTeilWFS" />
+        -->
+      </list>
+    </property>
+    <property name="widgetInfo">
+      <map>
+        <entry>
+          <key>
+            <util:constant
+                static-field="org.geomajas.widget.layer.configuration.client.ClientLayerTreeInfo.IDENTIFIER"/>
+          </key>
+          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerTreeInfo">
+            <property name="iconSize" value="22"/>
+            <property name="tools">
+              <list>
+                <ref bean="LayerVisibleTool"/>
+                <ref bean="LayerLabeledTool"/>
+                <ref bean="LayerRefreshAction"/>
+              </list>
+            </property>
+            <property name="treeNode">
+              <bean class="org.geomajas.widget.layer.configuration.client.ClientBranchNodeInfo">
+                <property name="label" value="Ebenen"/>
+                <property name="treeNodes">
+                  <list>
+                    <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                      <property name="layerId" value="clientLayerLPlan"/>
+                    </bean>
+                    <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                      <property name="layerId" value="clientLayerLPBereich"/>
+                    </bean>
+                    <bean class="org.geomajas.widget.layer.configuration.client.ClientBranchNodeInfo">
+                      <property name="label" value="Beschriftungen und Symbole"/>
+                      <property name="expanded" value="false"/>
+                      <property name="treeNodes">
+                        <list>
+                          <!-- Beschriftung -->
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayerLPXpPto"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayerLPXpLto"/>
+                          </bean>
+                          <!-- Symbole -->
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayerLPXpFpo"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayerLPXpLpo"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayerLPXpPpo"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayerLPSchutzobjbundesrechtsym"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayerLPSchutzobjinterrechtsym"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayerLPDenkmschrechtsym"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayerLPAusgleichsym"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayerLPWrschutzgebsym"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayerLPWrgemgebreinschrnatssym"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayerLPWrwirtschabflusshwssym"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayerLPForstrechtsym"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayerLPNutzerforderregelungsym"/>
+                          </bean>
+                        </list>
+                      </property>
+                    </bean>
+                    <bean class="org.geomajas.widget.layer.configuration.client.ClientBranchNodeInfo">
+                      <property name="label" value="Fachobjekte"/>
+                      <property name="expanded" value="false"/>
+                      <property name="treeNodes">
+                        <list>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerLPAbgrenzung"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerLPAllgGruenflaeche"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerLPAusgleich"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerLPBiotopverbundflaeche"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerLPBodenschutzrecht"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerLPDenkmalschutzrecht"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerLPErholungFreizeit"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerLPForstrecht"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerLPGenerischesObjekt"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerLPNutzungsAusschluss"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerLPNutzungserfordernisRegelung"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerLPPlanerischeVertiefung"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerLPSchutzobjektBundesrecht"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerLPSchutzobjektInternatRecht"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerLPSchutzPflegeEntwicklung"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerLPSonstigesRecht"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId"
+                                      value="clientLayerLPWasserrechtGemeingebrEinschraenkungNaturschutz"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerLPWasserrechtSchutzgebiet"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerLPWasserrechtSonstige"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerLPWasserrechtWirtschaftAbflussHochwSchutz"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerLPZwischennutzung"/>
+                          </bean>
+                        </list>
+                      </property>
+                    </bean>
+                    <!--
+                    <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                        <property name="layerId" value="clientLayerBPRaster" />
+                    </bean>
+                    -->
+                    <!--
+                    <bean class="org.geomajas.widget.layer.configuration.client.ClientBranchNodeInfo">
+                        <property name="label" value="Rasterpläne Röderland" />
+                        <property name="expanded" value="false" />
+                        <property name="treeNodes">
+                            <list>
+                                <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                                    <property name="layerId" value="clientLayerRoederland" />
+                                </bean>
+                            </list>
+                        </property>
+                    </bean>
+                    -->
+                    <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                      <property name="layerId" value="clientlayertopo"/>
+                    </bean>
+                    <bean class="org.geomajas.widget.layer.configuration.client.ClientBranchNodeInfo">
+                      <property name="label" value="Luftbild"/>
+                      <property name="expanded" value="false"/>
+                      <property name="treeNodes">
+                        <list>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayerluftbilda"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayerluftbild"/>
+                          </bean>
+                        </list>
+                      </property>
+                    </bean>
+                  </list>
+                </property>
+                <property name="expanded" value="true"/>
+              </bean>
+            </property>
+          </bean>
+        </entry>
+      </map>
+    </property>
+  </bean>
+</beans>

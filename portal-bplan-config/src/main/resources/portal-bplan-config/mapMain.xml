@@ -1,0 +1,557 @@
+<!-- ~ This is part of Geomajas, a GIS framework, http://www.geomajas.org/. ~ ~ Copyright 2008-2013 Geosparc nv, http://www.geosparc.com/, 
+Belgium. ~ ~ The program is available in open source according to the GNU Affero ~ General Public License. All contributions 
+in this program are covered ~ by the Geomajas Contributors License Agreement. For full licensing ~ details, see LICENSE.txt 
+in the project root. -->
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+
+  <bean name="mapMain" class="org.geomajas.configuration.client.ClientMapInfo">
+    <property name="backgroundColor" value="#FFFFFF"/>
+    <property name="crs" value="EPSG:25833"/>
+    <property name="scaleBarEnabled" value="true"/>
+    <property name="panButtonsEnabled" value="true"/>
+    <property name="scaleConfiguration">
+      <bean class="org.geomajas.configuration.client.ScaleConfigurationInfo">
+        <property name="maximumScale" value="1:50"/>
+        <property name="zoomLevels">
+          <list>
+            <value>1:300000</value>
+            <value>1:250000</value>
+            <value>1:200000</value>
+            <value>1:150000</value>
+            <value>1:100000</value>
+            <value>1:75000</value>
+            <value>1:50000</value>
+            <value>1:35000</value>
+            <value>1:25000</value>
+            <value>1:20000</value>
+            <value>1:15000</value>
+            <value>1:10000</value>
+            <value>1:7500</value>
+            <value>1:5000</value>
+            <value>1:2500</value>
+            <value>1:1000</value>
+            <value>1:500</value>
+            <value>1:250</value>
+            <value>1:100</value>
+            <value>1:50</value>
+          </list>
+        </property>
+      </bean>
+    </property>
+    <property name="pointSelectStyle">
+      <bean class="org.geomajas.configuration.FeatureStyleInfo">
+        <property name="fillColor" value="#FFFF00"/>
+      </bean>
+    </property>
+    <property name="polygonSelectStyle">
+      <bean class="org.geomajas.configuration.FeatureStyleInfo">
+        <property name="fillColor" value="#FFFF00"/>
+        <property name="fillOpacity" value=".5"/>
+      </bean>
+    </property>
+    <property name="lineSelectStyle">
+      <bean class="org.geomajas.configuration.FeatureStyleInfo">
+        <property name="fillOpacity" value="0"/>
+        <property name="strokeColor" value="#FF6600"/>
+        <property name="strokeOpacity" value="1"/>
+      </bean>
+    </property>
+    <property name="initialBounds">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="362240"/>
+        <property name="y" value="5691097"/>
+        <property name="width" value="63196"/>
+        <property name="height" value="59431"/>
+      </bean>
+    </property>
+    <property name="layers">
+      <list>
+        <ref bean="clientlayerluftbild"/>
+        <ref bean="clientlayerluftbilda"/>
+        <ref bean="clientlayertopo"/>
+        <ref bean="clientlayergrenzen"/>
+        <ref bean="clientLayerBPRaster"/>
+        <ref bean="clientLayerRoederland"/>
+        <ref bean="clientlayer_bp_gembedarfsfl_ref"/>
+        <ref bean="clientlayer_bp_gewfl_ref"/>
+        <ref bean="clientlayer_bp_verentsorgungsfl_ref"/>
+        <ref bean="clientlayer_bp_gruenfl_ref"/>
+        <ref bean="clientlayer_bp_verksflbeszwb_ref"/>
+        <ref bean="clientlayer_bp_baugebteilfl_ref"/>
+        <ref bean="clientlayer_bp_lwfl_ref"/>
+        <ref bean="clientlayer_bp_strverksfl_ref"/>
+        <ref bean="clientlayer_bp_waldfl_ref"/>
+        <ref bean="clientlayer_bp_gebaeudefl_ref"/>
+        <ref bean="clientlayer_bp_spispoanlfl_ref"/>
+        <ref bean="clientlayer_bp_schutzgeb_ref"/>
+        <ref bean="clientlayer_bp_kennzsfl_ref"/>
+        <ref bean="clientlayer_bp_vorbhwsfl_ref"/>
+        <ref bean="clientlayer_bp_abgrabungsfl_ref"/>
+        <ref bean="clientlayer_bp_abstandsfl_ref"/>
+        <ref bean="clientlayer_bp_aufschuettsfl_ref"/>
+        <ref bean="clientlayer_bp_ausgleich_ref"/>
+        <ref bean="clientlayer_bp_ausgleichsfl_ref"/>
+        <ref bean="clientlayer_bp_bsfl_ref"/>
+        <ref bean="clientlayer_bp_denkmschensfl_ref"/>
+        <ref bean="clientlayer_bp_strbegrlin_ref"/>
+        <ref bean="clientlayer_bp_erhsberfl_ref"/>
+        <ref bean="clientlayer_bp_foerderfl_ref"/>
+        <ref bean="clientlayer_bp_freifl_ref"/>
+        <ref bean="clientlayer_bp_gemanlfl_ref"/>
+        <ref bean="clientlayer_bp_verentsorgung_ref"/>
+        <ref bean="clientlayer_bp_ueberbaubgrundstsfl_ref"/>
+        <ref bean="clientlayer_bp_luftreinhfl_ref"/>
+        <ref bean="clientlayer_bp_luftverkfl_ref"/>
+        <ref bean="clientlayer_bp_persgrbestfl_ref"/>
+        <ref bean="clientlayer_bp_strkoerper_ref"/>
+        <ref bean="clientlayer_bp_techbestfl_ref"/>
+        <ref bean="clientlayer_bp_wrlfestsfl_ref"/>
+        <ref bean="clientlayer_bp_wwssfl_ref"/>
+        <ref bean="clientlayer_bp_bauschutzber_ref"/>
+        <ref bean="clientlayer_bp_fachgesetz_ref"/>
+        <ref bean="clientlayer_bp_schutzpflentwmassn_ref"/>
+        <ref bean="clientlayer_bp_nebenanlausschlfl_ref"/>
+        <ref bean="clientlayer_bp_ausgleichsmassn_ref"/>
+        <ref bean="clientlayer_bp_besnutzzweckfl_ref"/>
+        <ref bean="clientlayer_bp_erneuerbenergiefl_ref"/>
+        <ref bean="clientlayer_bp_grabungsschutzgeb_ref"/>
+        <ref bean="clientlayer_bp_speziellebauweise_ref"/>
+        <ref bean="clientlayer_bp_rekultivierungsfl_ref"/>
+        <ref bean="clientlayer_bp_unverbindlvormerk_ref"/>
+        <ref bean="clientlayer_bp_baugeb_ref"/>
+        <ref bean="clientlayer_bp_laermschutzber_ref"/>
+        <ref bean="clientlayer_bp_textlfestsfl_ref"/>
+        <ref bean="clientlayer_bp_genobj_ref"/>
+        <ref bean="clientlayer_bp_nebenanlfl_ref"/>
+        <ref bean="clientlayer_bp_bahnverk_ref"/>
+        <ref bean="clientlayer_bp_baugr_ref"/>
+        <ref bean="clientlayer_bp_baulin_ref"/>
+        <ref bean="clientlayer_bp_lwlin_ref"/>
+        <ref bean="clientlayer_bp_schutzpflentwfl_ref"/>
+        <ref bean="clientlayer_bp_berohneeinausflin_ref"/>
+        <ref bean="clientlayer_bp_einfberlin_ref"/>
+        <ref bean="clientlayer_bp_firstrilin_ref"/>
+        <ref bean="clientlayer_bp_immsschutz_ref"/>
+        <ref bean="clientlayer_bp_nutzartgr_ref"/>
+        <ref bean="clientlayer_bp_verentsorgungsleitlin_ref"/>
+        <ref bean="clientlayer_bp_wegerecht_ref"/>
+        <ref bean="clientlayer_bp_denkmscheinzanlpt_ref"/>
+        <ref bean="clientlayer_bp_anpflanzbinderh_ref"/>
+        <ref bean="clientlayer_bp_hoehenpt_ref"/>
+        <ref bean="clientlayer_bp_einfpt_ref"/>
+        <ref bean="clientlayer_bp_xp_pto_ref"/>
+        <ref bean="clientlayer_bp_xp_lto_ref"/>
+        <ref bean="clientlayer_bp_abgrabungsflsym_ref"/>
+        <ref bean="clientlayer_bp_aufschuettsflsym_ref"/>
+        <ref bean="clientlayer_bp_bahnverksym_ref"/>
+        <ref bean="clientlayer_bp_baugebteilflsym_ref"/>
+        <ref bean="clientlayer_bp_besnutzzweckflsym_ref"/>
+        <ref bean="clientlayer_bp_bsflsym_ref"/>
+        <ref bean="clientlayer_bp_denkmschensflsym_ref"/>
+        <ref bean="clientlayer_bp_erhsberflsym_ref"/>
+        <ref bean="clientlayer_bp_festsbaugebsym_ref"/>
+        <ref bean="clientlayer_bp_gembedarfsflsym_ref"/>
+        <ref bean="clientlayer_bp_gemanlflsym_ref"/>
+        <ref bean="clientlayer_bp_gewflsym_ref"/>
+        <ref bean="clientlayer_bp_gruenflsym_ref"/>
+        <ref bean="clientlayer_bp_lwflsym_ref"/>
+        <ref bean="clientlayer_bp_luftverkflsym_ref"/>
+        <ref bean="clientlayer_bp_nebenanlflsym_ref"/>
+        <ref bean="clientlayer_bp_schutzgebsym_ref"/>
+        <ref bean="clientlayer_bp_schutzpflentwmassnsym_ref"/>
+        <ref bean="clientlayer_bp_spispoanlflsym_ref"/>
+        <ref bean="clientlayer_bp_verentsorgungsflsym_ref"/>
+        <ref bean="clientlayer_bp_verentsorgungsym_ref"/>
+        <ref bean="clientlayer_bp_verksflbeszwbsym_ref"/>
+        <ref bean="clientlayer_bp_vorbhwsflsym_ref"/>
+        <ref bean="clientlayer_bp_waldflsym_ref"/>
+        <ref bean="clientlayer_bp_wrlfestsflsym_ref"/>
+        <ref bean="clientlayer_bp_wwssflsym_ref"/>
+        <ref bean="clientlayer_bp_plan_ref"/>
+        <ref bean="clientlayer_bp_ber_ref"/>
+        <ref bean="clientLayerBPlanWFS"/>
+      </list>
+    </property>
+    <property name="widgetInfo">
+      <map>
+
+        <entry>
+          <key>
+            <util:constant
+                static-field="org.geomajas.widget.layer.configuration.client.ClientLayerTreeInfo.IDENTIFIER"/>
+          </key>
+          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerTreeInfo">
+            <property name="iconSize" value="22"/>
+            <property name="tools">
+              <list>
+                <ref bean="LayerVisibleTool"/>
+                <ref bean="LayerLabeledTool"/>
+                <ref bean="LayerRefreshAction"/>
+              </list>
+            </property>
+            <property name="treeNode">
+              <bean class="org.geomajas.widget.layer.configuration.client.ClientBranchNodeInfo">
+                <property name="label" value="Ebenen"/>
+                <property name="treeNodes">
+                  <list>
+                    <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                      <property name="layerId" value="clientlayer_bp_plan_ref"/>
+                    </bean>
+                    <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                      <property name="layerId" value="clientlayer_bp_ber_ref"/>
+                    </bean>
+                    <bean class="org.geomajas.widget.layer.configuration.client.ClientBranchNodeInfo">
+                      <property name="label" value="Beschriftungen und Symbole"/>
+                      <property name="expanded" value="false"/>
+                      <property name="treeNodes">
+                        <list>
+
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_xp_pto_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_xp_lto_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_abgrabungsflsym_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_aufschuettsflsym_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_bahnverksym_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_baugebteilflsym_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_besnutzzweckflsym_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_bsflsym_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_denkmschensflsym_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_erhsberflsym_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_festsbaugebsym_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_gembedarfsflsym_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_gemanlflsym_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_gewflsym_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_gruenflsym_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_lwflsym_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_luftverkflsym_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_nebenanlflsym_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_schutzgebsym_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_schutzpflentwmassnsym_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_spispoanlflsym_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_verentsorgungsflsym_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_verentsorgungsym_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_verksflbeszwbsym_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_vorbhwsflsym_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_waldflsym_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_wrlfestsflsym_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_wwssflsym_ref"/>
+                          </bean>
+                        </list>
+                      </property>
+                    </bean>
+                    <bean class="org.geomajas.widget.layer.configuration.client.ClientBranchNodeInfo">
+                      <property name="label" value="Fachobjekte"/>
+                      <property name="expanded" value="false"/>
+                      <property name="treeNodes">
+                        <list>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_denkmscheinzanlpt_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_anpflanzbinderh_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_hoehenpt_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_einfpt_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_genobj_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_nebenanlfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_bahnverk_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_baugr_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_baulin_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_lwlin_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_schutzpflentwfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_berohneeinausflin_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_einfberlin_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_firstrilin_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_immsschutz_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_nutzartgr_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_verentsorgungsleitlin_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_wegerecht_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_spispoanlfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_schutzgeb_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_kennzsfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_vorbhwsfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_abgrabungsfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_abstandsfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_aufschuettsfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_ausgleich_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_ausgleichsfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_bsfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_denkmschensfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_strbegrlin_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_erhsberfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_foerderfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_freifl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_gemanlfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_verentsorgung_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_ueberbaubgrundstsfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_luftreinhfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_luftverkfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_persgrbestfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_strkoerper_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_techbestfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_wrlfestsfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_wwssfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_bauschutzber_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_fachgesetz_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_schutzpflentwmassn_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_nebenanlausschlfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_ausgleichsmassn_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_besnutzzweckfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_erneuerbenergiefl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_grabungsschutzgeb_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_speziellebauweise_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_rekultivierungsfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_unverbindlvormerk_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_baugeb_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_laermschutzber_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_textlfestsfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_gebaeudefl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_gembedarfsfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_gewfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_verentsorgungsfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_gruenfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_verksflbeszwb_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_baugebteilfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_lwfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_strverksfl_ref"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayer_bp_waldfl_ref"/>
+                          </bean>
+
+
+                        </list>
+                      </property>
+                    </bean>
+                    <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                      <property name="layerId" value="clientLayerBPRaster"/>
+                    </bean>
+
+                    <bean class="org.geomajas.widget.layer.configuration.client.ClientBranchNodeInfo">
+                      <property name="label" value="Rasterpläne Röderland"/>
+                      <property name="expanded" value="false"/>
+                      <property name="treeNodes">
+                        <list>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientLayerRoederland"/>
+                          </bean>
+                        </list>
+                      </property>
+                    </bean>
+                    <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                      <property name="layerId" value="clientlayergrenzen"/>
+                    </bean>
+                    <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                      <property name="layerId" value="clientlayertopo"/>
+                    </bean>
+                    <bean class="org.geomajas.widget.layer.configuration.client.ClientBranchNodeInfo">
+                      <property name="label" value="Luftbild"/>
+                      <property name="expanded" value="false"/>
+                      <property name="treeNodes">
+                        <list>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayerluftbilda"/>
+                          </bean>
+                          <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+                            <property name="layerId" value="clientlayerluftbild"/>
+                          </bean>
+                        </list>
+                      </property>
+                    </bean>
+                  </list>
+                </property>
+                <property name="expanded" value="true"/>
+              </bean>
+            </property>
+          </bean>
+        </entry>
+      </map>
+    </property>
+  </bean>
+</beans>

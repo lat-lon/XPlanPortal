@@ -1,0 +1,204 @@
+
+== Benutzerhandbuch
+
+
+Die Portalkomponenten der xPlanBox dienen als zentrale Anlaufstelle zur
+Information und Recherche der bereitgestellten Planwerke. Im Folgenden
+werden der Aufbau sowie die wesentlichen Funktionen erläutert.
+
+=== Aufbau
+
+Das XPlanPortal besteht aus drei Bereiche. Auf der linken Seite befindet
+sich die Ebenenübersicht. Dort sind alle Ebenen strukturiert
+aufgelistet, welche im Portal dargestellt werden können. Auf der rechten
+Seite befindet sich eine Übersichtskarte, eine Maßstabsauswahl, eine
+Koordinatenanzeige sowie eine Legende.
+
+Die zwei Bereiche lassen sich mit der Maus vergrößern, verkleinern sowie
+komplett schließen und wieder öffnen. Es besteht weiterhin die
+Möglichkeit, die Ebenenübersicht, die Übersichtskarte, usw. zu
+minimieren.
+
+Zwischen den zwei Bereichen befindet sich das Kartenfenster zur
+Darstellung der Ebenen mit Maßstabsleiste und einem Navigationswerkzeug.
+In der Kopfleiste des Kartenfenster befinden sich weitere Werkzeuge,
+welche im weiteren Verlauf beschrieben werden.
+
+=== Funktionen
+
+==== Wechseln der Planart
+
+Über die Drop-Down-Liste kann in eine andere Planart (Bebauungspläne,
+Flächennutzungspläne und Landschaftspläne) gewechselt werden. Alternativ
+kann über die Startseite in das jeweilige Planungsportal gewechselt
+werden.
+
+Die Portale können auch direkt aufgerufen werden:
+
+----
+http://<host>:<port>/portal-bplan/
+http://<host>:<port>/portal-fplan/
+http://<host>:<port>/portal-lplan/
+----
+
+==== Struktur und Funktion der Ebenenübersicht
+
+In der Ebenenübersicht werden alle Ebenen und Kategorien aufgelistet.
+Kategorien enthalten mehrere Ebenen. Sie sind mit einem Ordner
+gekennzeichnet und können aufgeklappt werden. Jede Kategorie und jede
+Ebene kann einzeln sichtbar (__offenes Auge__) und nicht sichtbar
+(__geschlossenes Auge__) geschaltet werden. Um eine Kategorie bzw. Ebene
+zu bearbeiten, muss diese markiert werden. Die markierte Ebene wird nun
+als _Aktive Ebene_ gekennzeichnet.
+
+Überlappen sich Ebenen, wird die im Ebenenbaum oben liegende Ebene als
+erstes im Kartenfenster dargestellt. Die Zeichenreihenfolge kann manuell
+über den Button _Zeichenreihenfolge verändern_ geändert werden. Die
+ausgewählte Ebene kann per Drag&Drop an die gewünschte Stelle verschoben
+werden. Die Zeichenreihenfolge ist absteigend.
+
+Weitere externe WMS Ebenen können über des Button _WMS-Layer hinzufügen_
+in das Kartenfenster geladen werden. Nach Betätigen des Buttons öffnet
+sich ein Fenster, in dem der Nutzer eine WMS Adresse sowie den
+gewünschten Layer Namen eintragen kann. Mit dem Klick auf _Hinzufügen_
+wird die WMS Ebene im Kartenfenster dargestellt.
+
+Über das Zahnrad kann die Sichtbarkeit bzw. die Deckkraft (Transparenz)
+für jede Ebene (außer die ROOT Ebene) einzeln eingestellt werden. Das
+Zahnrad wird eingeblendet, sobald der Mauszeiger über eine Ebene führt.
+
+Die Deckkraft der Ebenen ist manuell regulierbar und die Sichtbarkeit
+kann per Häkchen aktiv / passiv geschaltet werden.
+
+==== Navigation
+
+Das Portal bietet dem Nutzer eine Vielzahl von Navigationsmöglichkeiten.
+Anhand der Übersichtskarte kann dieser sich orientieren. Es ist außerdem
+möglich, an eine gewünschte Stelle zu navigieren, indem das Rechteck
+bzw. Kreuz (abhängig von dem Maßstab) verschoben wird.
+
+Um in ein bestimmtes Gebiet zu navigieren, kann der Nutzer das Werkzeug
+_Zoom Rechteck_ (Lupe) aktivieren. Mit der Lupe kann ein
+Kartenausschnitt aufgezogen werden. Hierbei wird die Karte automatisch
+vergrößert.
+
+Anschließend kann das Gebiet im Kartenfenster durch das Werkzeug
+__Verschieben__, welches vorher aktiviert werden muss, mit gedrückter
+Maustaste verschoben werden.
+
+Möchte der Nutzer zu einem zuvor ausgewählten Bereich, kann dieser durch
+Aktivieren der Werkzeuge _Vorheriger Kartenausschnitt_ und _Nächster
+Kartenausschnitt_ zu dem jeweiligen Kartenausschnitt gelangen.
+
+Innerhalb des Kartenfensters sind weitere Möglichkeiten, wie die
+Verschiebung des Kartenfensters in eine Himmelsrichtung und das Hinein-
+bzw. Hinauszoomen durch die Button _+_ und _-_ möglich. Zum Darstellen
+der maximalen Ausdehnung kann der Button zwischen _+_ und _-_ verwendet
+werden.
+
+Das erneute Laden des Kartenausschnitts kann über _Karte aktualisieren_
+erfolgen.
+
+==== Bedienung der Maßstabsauswahl
+
+Die Maßstabsauswahl beinhaltet vordefinierte Maßstäbe, welche in einer
+Drop-Down-Liste ausgewählt werden können. Der Maßstab kann außerdem
+mittels Mausrad (__Scrollen__) verändert werden. Beim Zoom In und Zoom
+Out verändert sich die Maßstabsanzeige.
+
+[[koordinatenanzeige]]
+==== Koordinatenanzeige
+
+
+Die Koordinatenanzeige zeigt die Koordinaten der Kartenposition, an der
+sich der Mauszeiger befindet. Als Koordinatensystem wird UTM Zone 33N
+(EPSG:25833) verwendet.
+
+==== Bedienung des Messwerkzeuges
+
+Es besteht die Möglichkeit Entfernungen und Flächen zu messen. Hierfür
+muss das jeweilige Bedienelement (__Entfernung messen__ bzw. __Fläche
+messen__) in der Kopfleiste aktiviert werden. Danach kann mit der Maus
+ein Startpunkt angelegt werden. Nun kann mit der Maus eine Linie bzw.
+eine Fläche aufgezogen werden. Dabei ist die Erstellung von mehreren
+Zwischenpunkten möglich. Die Entfernung wird in einem kleinem Fenster
+ausgegeben. Das Messen kann mit der rechten Maustaste abgebrochen
+werden.
+
+==== Bedienung der Suchfunktion
+
+Das XPlanPortal hat drei Suchfunktionen (__Räumliche Suche__, _Freie
+Suche_ und __Kombinierte Suche__).
+
+===== Räumliche Suche
+
+Die _Räumliche Suche_ grenzt die Suche auf ein vorher festgelegtes
+Gebiet ein. Nachdem ein Geometrietyp (Punkt, Linie oder Fläche)
+ausgewählt wurde, kann das Gebiet ausgewählt bzw. eingegrenzt werden.
+Die Ergebnisse werden nach dem Betätigen des Buttons _Suche_ in einer
+Liste angezeigt. Nach Auswahl eines Suchergebnisses, kann dieses als
+__CSV__-Datei heruntergeladen werden. Des weiteren kann eine
+Detailansicht aufgerufen und auf das Objekt gezoomt werden.
+
+===== Freie Suche
+
+Die _Freie Suche_ wird ohne räumliche Einschränkung ausgeführt. Zunächst
+muss eine Ebene sowie ein Attribut ausgewählt werden, welche durchsucht
+werden sollen. Zur Eingrenzung von Suchergebnissen können die Operatoren
+__enthält__, _ist gleich_ oder _ist ungleich_ verwendet werden. Nach
+Eingabe eines Wertes in das dafür vorgesehene Feld und Betätigen des
+Button __Suche__, werden die Ergebnisse aufgelistet. Bei der _Freien
+Suche_ können mehrere Bedingungen über das Zeichen _+_ angegeben werden.
+
+===== Kombinierte Suche
+
+Die _Kombinierte Suche_ beinhaltet die _Räumliche Suche_ und _Freie
+Suche_ und dient für komplexerer Abfragen. Die Auswahl von
+Suchbedingungen ist analog zur _Räumlichen Suche_ und __Freien Suche__.
+Es können beliebig viele Verknüpfungen von Suchbedingungen angegeben
+werden. Mit anschließendem Betätigen des Buttons _Suchen_ werden die
+Suchergebnisse aufgelistet.
+
+==== Bedienung der Objektinformationsanzeige
+
+Zum Abfragen von z.B. planspezifischen Eigenschaften eines Objektes
+eignet sich das Werkzeug __Sachinformation abfragen__. Zunächst muss das
+Werkzeug aktiviert werden. Nachdem zu einem Objekt navigiert wurde, kann
+durch Drücken der linken Maustaste auf das Objekt die
+Objektinformationen in einem Fenster dargestellt werden. Liefern mehrere
+Ebenen ein Ergebnis zurück, werden diese aufgelistet.
+
+==== Bedienung des Druckmoduls
+
+Nach Aktivierung des Bedienelements zum Drucken, öffnet sich ein Fenster
+mit einem Dialogmenü. Dort können verschiedene Einstellungen, z.B.:
+
+_________________
+* Titel,
+* Größe,
+* Ausrichtung und
+* Dateiname
+_________________
+
+vorgenommen werden. Zusätzlich besteht die Möglichkeit, die Auflösung
+manuell oder über einen Regler anzugeben.
+
+=== Bekannte Probleme im Mozilla Firefox
+
+Derzeit ist die Nutzbarkeit der XPlan Portale unter Windows und Linux
+mit einigen Mozilla Firefox Version nur eingeschränkt möglich. Bei
+häufiger Interaktion mit der Karte (z.B. durch zoomen oder verschieben
+des Kartenausschnitts) kann es zu Bildfehlern und Abstürzen kommen. Es
+sind insbesondere die Versionen 35, 37 und 38 des Mozilla Firefox
+betroffen.
+
+NOTE: Problem resultiert aus einer hohen Speicherallokation und einer
+langsamen Freisetzung des allokierten Speichers durch den Firefox. Somit
+tritt das Problem auf, wenn viele speicherintensive Interaktionen
+innerhalb kurzer Zeit durchgeführt werden (z.B. zoomen oder verschieben
+des Kartenausschnitts). Wenn solche Interaktionen nicht innerhalb
+kürzester Zeit direkt hintereinander ausgeführt werden, tritt der Fehler
+nicht auf, da der Speicher nach einer gewissen Zeit wieder automatisch
+freigesetzt wird. Zudem sind PCs mit wenig Arbeitsspeicher (1-2 GB RAM)
+stärker betroffen als welche mit größerem Arbeitsspeicher (mehr als 4 GB
+RAM).

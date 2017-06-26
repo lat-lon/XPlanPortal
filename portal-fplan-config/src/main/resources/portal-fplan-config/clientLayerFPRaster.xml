@@ -1,0 +1,111 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPRaster">
+    <property name="serverLayerId" value="fpraster"/>
+    <property name="label" value="Rasterpläne"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPEichholz">
+    <property name="aggregationId" value="einzel"/>
+    <property name="serverLayerId" value="fpeichholz"/>
+    <property name="label" value="FNP Eichholz Drössig"/>
+    <property name="visible" value="false"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPFischwasser">
+    <property name="aggregationId" value="einzel"/>
+    <property name="serverLayerId" value="fpfischwasser"/>
+    <property name="label" value="FNP Fischwasser"/>
+    <property name="visible" value="false"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPGruhno">
+    <property name="aggregationId" value="einzel"/>
+    <property name="serverLayerId" value="fpgruhno"/>
+    <property name="label" value="FNP Gruhno"/>
+    <property name="visible" value="false"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPLindena">
+    <property name="aggregationId" value="einzel"/>
+    <property name="serverLayerId" value="fplindena"/>
+    <property name="label" value="FNP Lindena"/>
+    <property name="visible" value="false"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPOppelhain">
+    <property name="aggregationId" value="einzel"/>
+    <property name="serverLayerId" value="fpoppelhain"/>
+    <property name="label" value="FNP Oppelhain"/>
+    <property name="visible" value="false"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPSchadewitz">
+    <property name="aggregationId" value="einzel"/>
+    <property name="serverLayerId" value="fpschadewitz"/>
+    <property name="label" value="FNP Schadewitz"/>
+    <property name="visible" value="false"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPRueckersdorf">
+    <property name="aggregationId" value="einzel"/>
+    <property name="serverLayerId" value="fprueckersdorf"/>
+    <property name="label" value="FNP Rückersdorf"/>
+    <property name="visible" value="false"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPSchilda">
+    <property name="aggregationId" value="einzel"/>
+    <property name="serverLayerId" value="fpschilda"/>
+    <property name="label" value="FNP Schilda"/>
+    <property name="visible" value="false"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPSchoenborn">
+    <property name="aggregationId" value="einzel"/>
+    <property name="serverLayerId" value="fpschoenborn"/>
+    <property name="label" value="FNP Schönborn"/>
+    <property name="visible" value="false"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPTroebitz">
+    <property name="aggregationId" value="einzel"/>
+    <property name="serverLayerId" value="fptroebitz"/>
+    <property name="label" value="FNP Tröbitz"/>
+    <property name="visible" value="false"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPGroeden">
+    <property name="aggregationId" value="einzel"/>
+    <property name="serverLayerId" value="fpgroeden"/>
+    <property name="label" value="FNP Gröden"/>
+    <property name="visible" value="false"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPGrossthiemig">
+    <property name="aggregationId" value="einzel"/>
+    <property name="serverLayerId" value="fpgrossthiemig"/>
+    <property name="label" value="FNP Großthiemig"/>
+    <property name="visible" value="false"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPHirschfeld">
+    <property name="aggregationId" value="einzel"/>
+    <property name="serverLayerId" value="fphirschfeld"/>
+    <property name="label" value="FNP Hirschfeld"/>
+    <property name="visible" value="false"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPMerzdorf">
+    <property name="aggregationId" value="einzel"/>
+    <property name="serverLayerId" value="fpmerzdorf"/>
+    <property name="label" value="FNP Merzdorf"/>
+    <property name="visible" value="false"/>
+    <property name="style" value="1"/>
+  </bean>
+
+</beans>
+	

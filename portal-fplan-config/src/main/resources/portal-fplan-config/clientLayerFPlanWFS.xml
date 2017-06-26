@@ -1,0 +1,26 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+  <bean class="org.geomajas.configuration.client.ClientVectorLayerInfo"
+        id="clientLayerFPlanWFS">
+    <property name="serverLayerId" value="layerFPlanWFS"/>
+    <property name="label" value="Flächennutzungspläne"/>
+    <property name="visible" value="true"/>
+    <property name="maximumScale" value="1:1"/>
+    <property name="minimumScale" value="1:500000000"/>
+    <property name="namedStyleInfo" ref="FPlanWFSStyleInfo"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientVectorLayerInfo"
+        id="clientLayerFPBebauungWFS">
+    <property name="serverLayerId" value="layerFPBebauungWFS"/>
+    <property name="label" value="Bebauungsflächen"/>
+    <property name="visible" value="true"/>
+    <property name="maximumScale" value="1:1"/>
+    <property name="minimumScale" value="1:500000000"/>
+    <property name="namedStyleInfo" ref="FPlanWFSStyleInfo"/>
+  </bean>
+
+
+</beans>
+	

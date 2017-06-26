@@ -1,0 +1,377 @@
+
+== Betriebshandbuch
+
+In diesem Teil der Dokumentation befinden sich Informationen zu
+den Systemvoraussetzungen und der Installation für den Betrieb
+des XPlanPortal. Die Webanwendungen basieren auf den Komponenten des
+Open-Source-Projekts http://www.geomajas.org/[Geomajas].
+
+=== Systemüberblick
+
+Als zugrunde liegende Basistechnologien des XPlanPortals werden Java und Apache Tomcat verwendet.
+Zur erfolgreichen Installation müssen die in diesem Kapitel beschriebenen Voraussetzungen erfüllt werden.
+
+==== Betriebssystem
+
+Als Betriebssystem kann ein beliebiges 64-bit Betriebssystem verwendet
+werden, das Java SE 7 (http://www.oracle.com/technetwork/java/javase/downloads/index.html[Oracle
+JRE 1.7]) unterstützt.
+
+NOTE: Empfohlen wird die Nutzung eines der folgenden Betriebssysteme: Debian
+Wheezy, SLES 11 SP4, Oracle Linux 7, CentOS 7.x, Windows Server 2008
+R2/2012 R2.
+
+NOTE: Das Gebietsschema des Betriebssystems ("Locale") sollte auf deutsch
+konfiguriert sein, da einzelne Fehlerbeschreibungen in dieser Sprache
+ausgegeben werden. Unter Linux kann das
+Gebietsschema beispielsweise in der Datei "/etc/default/locale"
+angepasst werden.
+
+NOTE: Empfohlen wird Oracle JDK 1.7_45+.
+
+==== Java Applikationsserver
+
+Als Applikationsserver wird Apache Tomcat in der Version 7 empfohlen.
+Das Installationsarchiv findet sich bei der
+http://tomcat.apache.org[Apache Foundation]. Diese Dokumentation bezieht
+sich grundsätzlich auf den Apache Tomcat.
+
+NOTE: Die minimale Anforderung an den Applikationsserver ist das Java EE 6 Web
+Profil. Empfohlen wird Apache Tomcat Version 7.0.32+.
+
+==== Systemvoraussetzungen
+
+===== Server
+
+====== Minimale Systemvoraussetzung
+
+________________________________________________________________________________________________________________________
+* CPU: 2 CPUs mit je 2 Kernen (2x DualCore) oder 1 CPU mit 4 Kernen (1x
+QuadCore) - minimal 2,0-GHz-Prozessor mit 64 Bit
+* Arbeitsspeicher: 8 GB RAM
+* Netzwerkadapter: Gigabit-Ethernet-Adapter (10/100/1000baseT PHY/MAC)
+* Festplattensystem: Journaling-Dateisystem (Kapazität nach Bedarf,
+Minimum 500 GB)
+________________________________________________________________________________________________________________________
+
+====== Empfohlene Systemkonfiguration
+
+______________________________________________________________________________________________________________
+* CPU: 2 CPUs mit je 4 Kernen (2x QuadCore) or 1 CPU mit 8 Kernen (1x
+OctaCore) - 3,0-GHz-Prozessor mit 64 Bit
+* Arbeitsspeicher: 32 GB RAM
+* Netzwerkadapter: Gigabit-Ethernet-Adapter (10/100/1000baseT PHY/MAC)
+* Festplattensystem: RAID-10 (Kapazität nach Bedarf, Minimum 500 GB)
+optional mit SSD
+______________________________________________________________________________________________________________
+
+===== Client
+
+_____________________________________________
+* CPU: 1 CPU mit mindestens 1,4-GHz-Prozessor
+* Arbeitsspeicher: 4 GB RAM
+_____________________________________________
+
+NOTE: Weitere Informationen zu den Systemvoraussetzungen bei den unterstützten
+Browsern: Microsoft Internet Explorer (9, 10, 11), Mozilla Firefox: 36+,
+Google Chrome: 40+
+
+=== Installation
+
+[[Installation_Konfigurationsdateien]]
+==== Konfigurationsdateien
+
+Die die Konfiguration enthaltenen __jar__-Archive müssen in das Verzeichnis _.deegree/portal-configuration_ im Home-Verzeichnis des Nutzers kopiert (aber nicht entpackt) werden:
+______________________
+* _xplan-bplan-config_
+* _xplan-fplan-config_
+* _xplan-lplan-config_
+______________________
+
+==== Anwendungen
+
+Die WAR-Archive der XPlanPortal-Komponenten werden über eine Tomcat-Installation bereitgestellt:
+
+______________________
+* _portal-bplan.war_
+* _portal-fplan.war_
+* _portal-lplan.war_
+______________________
+
+==== Konfiguration des Applikationsservers
+
+Im Applikationsserver muss die Konfiguration des XPlanPortals dem Tomcat bekannt gegeben
+werden. Dazu muss der Classpath um die Referenzen auf die Konfigurations-JARs der Portale erweitert werden. Wurde die Anleitung in Abschnitt <<Installation_Konfigurationsdateien>> befolgt, befinden sich die drei jar-Dateien im Verzeichnis _.deegree_ im Home-Verzeichnis des
+Nutzers.
+
+===== Linux
+
+Für die Konfiguration der oben genannten Punkte muss zunächst im
+Verzeichnis _<tomcat-root>/bin_ eine neue Datei mit dem Namen
+_setenv.sh_ angelegt werden.
+
+Für die Konfiguration der XPlanPortale werden die Verweise auf die
+Konfigurations-JARs der Portale eingetragen, getrennt mit einem
+Doppelpunkt (__:__):
+
+----
+CLASSPATH=<root>/.deegree/xplan-bplan-config-1.0.jar:<root>/.deegree/xplan-fplan-config-1.0.jar:<root>/.deegree/xplan-lplan-config-1.0.jar
+----
+
+NOTE: Es müssen ggf. Zeilenumbrüche entfernt werden.
+
+===== Windows
+
+Für die Konfiguration der *XPlanPortale* wird im Verzeichnis
+_<tomcat-root>/conf_ die Datei mit dem Namen _catalina.properties_
+angepasst. Der Verweis auf die Konfigurations-JARs der XPlanPortale muss
+unter _common.loader_ eingetragen werden, getrennt mit einem Komma
+(__,__). Die Tomcat eigenen JAR Dateien, müssen unbedingt beibehalten
+werden. :
+
+----
+common.loader=C:\.deegree\xplan-bplan-config-1.0.jar;,C:\.deegree\xplan-fplan-config-1.0.jar;,C:\.deegree\xplan-lplan-config-1.0.jar;,$\{catalina.base}\lib,$\{catalina.base}\lib\__.jar,$\{catalina.home}\lib,$\{catalina.home}\lib\__.jar
+----
+
+=== Konfiguration
+
+Alle Konfigurationsdateien der XPlanPortale liegen im _.deegree_ des
+Benutzers und werden im Folgenden als _<portal-config-jar>_ benannt. Für
+die allgemeine Konfiguration der XPlanPortale wird außerdem auf die
+geomajas Dokumentation (http://www.geomajas.org/geomajas/docs)
+verwiesen.
+
+==== Konfiguration des XPlanWMS aus der xPlanBox:
+
+Die URL des XPlanWMS muss in den folgenden Dateien in den jar-Datei der Konfigurationen (_.deegree/portal-configuration/<portal>-config.jar_) angepasst werden:
+
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+* _layer[B|F|L]Plan.xml_
+* _layer[B|F|L]PlanWFS.xml_
+* _layer[B|F|L]PRaster.xml_
+* _featureHitsRetriever[B|F|L]P.xml_
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+Für die XPlanPortal-Komponenten müssen in den genannten Dateien alle Werte der
+Properties _baseWmsUrl_ (layer[B|F|L]Plan.xml und
+layer[B|F|L]PRaster.xml) bzw. _values_ (layer[B|F|L]PlanWFS.xml) und
+_wfsRequestUrlForBboxFeatureHits_ (featureHitsRetriever[B|F|L]P.xml),
+die einen der deegree Dienste referenzieren, angepasst werden.
+
+Beispiel _layerBPlan.xml_:
+
+----
+...
+<bean name="bp_plan" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
+    <property name="layerInfo" ref="layer_bp_plan_ref" />
+    <property name="baseWmsUrl" value="http://<host>:<port>/<service>/service/wms?" />
+    <property name="version" value="1.1.1" />
+...
+----
+
+==== WMS-Ebene hinzufügen
+
+Um eine neue WMS-Ebene hinzuzufügen, muss diese im entsprechenden
+XPlanPortal konfiguriert werden. Neue Ebenen werden in folgenden Dateien
+konfiguriert:
+
+Konfiguration der Ebene für den Server
+`<portal-config-jar>\<portalname>\layerWms.xml`
+
+----
+<bean name="layerNeu" class="org.geomajas.layer.wms.WmsLayer">
+  <property name="layerInfo" ref="layerNeuInfo" />
+  <property name="baseWmsUrl" value="http://<host>:<port>/services" />
+  <property name="version" value="1.1.1" />
+  <property name="format" value="image/png" />
+  <property name="styles" value="default" />
+  <property name="enableFeatureInfoAsGmlSupport" value="true" />
+  <property name="enableFeatureInfoAsHtmlSupport" value="true" />
+  <property name="parameters">
+    <list>
+      <bean class="org.geomajas.configuration.Parameter">
+        <property name="name" value="TRANSPARENT" />
+        <property name="value" value="true" />
+      </bean>
+    </list>
+  </property>
+</bean>
+
+<bean name="layerNeuInfo" class="org.geomajas.configuration.RasterLayerInfo">
+  <property name="crs" value="EPSG:31468" />
+  <property name="maxExtent">
+    <bean class="org.geomajas.geometry.Bbox">
+      <property name="x" value="4336546" />
+      <property name="y" value="5580793" />
+      <property name="width" value="197215" />
+      <property name="height" value="140023" />
+    </bean>
+  </property>
+  <property name="dataSourceName" value="layerNeuName" />
+  <property name="tileWidth" value="512" />
+  <property name="tileHeight" value="512" />
+</bean>
+----
+
+Konfiguration der Ebene für den Client
+`<portal-config-jar>\<portalname>\clientLayerWms.xml`
+
+----
+<bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerNeu">
+  <property name="serverLayerId" value="layerNeu" />
+  <property name="label" value="Kreise" />
+  <property name="visible" value="true" />
+  <property name="style" value="1" />
+</bean>
+----
+
+Hinzufügen der Ebene zur Karte
+`<portal-config-jar>\<portalname>\mapMain.xml`
+
+----
+<property name="layers">
+  <list>
+    ...
+    <ref bean="clientLayerNeu" />
+    ...
+  </list>
+</property>
+
+...
+
+<property name="treeNode">
+  <bean class="org.geomajas.widget.layer.configuration.client.ClientBranchNodeInfo">
+    <property name="treeNodes">
+      <list>
+        ...
+        <bean class="org.geomajas.widget.layer.configuration.client.ClientLayerNodeInfo">
+          <property name="layerId" value="clientLayerNeu" />
+        </bean>
+        ...
+      </list>
+    </property>
+  </bean>
+</property>
+----
+
+==== Zeichenreihenfolge der Layer im Kartenfenster ändern
+
+Um die Zeichenreihenfolge der Layer in der Ebenenübersicht im
+Kartenfenster zu ändern, muss in der Datei
+
+----
+<portal-config-jar>\<portalname>\mapMain.xml
+----
+
+die Reihenfolge der Layer (`<ref bean.../>`) geändert werden. Die
+Reihenfolge der Layer ist umgekehrt zur tatsächlichen
+Zeichenreihenfolge:
+
+----
+<property name="layers">
+  <list>
+     <ref bean="clientLayerTopoSachsenGrau" />
+     <ref bean="clientLayerTopoSachsen" />
+     <ref bean="clientLayerFaunaFloraHabitat" />
+     <ref bean="clientLayerVogelschutzgebieteEu" />
+     <ref bean="clientLayerKreiseSachsen" />
+     <ref bean="clientLayerBPRaster" />
+     <ref bean="clientlayer_bp_gembedarfsfl_ref" />
+    ...
+----
+
+==== Statische Legenden zu einer WMS-Ebene hinzufügen
+
+Für alle WMS-Ebenen kann ein statisches Legendenbild konfiguriert
+werden. Dazu muss in der Bean der Ebene eine Eigenschaft hinzugefügt
+werden.
+
+----
+<portal-config-jar>\<portalname>\layerTldaWms.xml
+----
+
+Dabei kann der Pfad zu der gewünschten Legende angegeben werden.
+
+----
+<bean name="kreiseSachsen" class="org.geomajas.layer.wms.WmsLayer">
+  ...
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <property name="staticLegendImagePath" value="legends/legende.png"/>
+  ...
+</bean>
+----
+
+Neue Legendenbilder können im zugehörigen Verzeichnis abgelegt werden: :
+
+----
+<portal-config-jar>\<portalname>\legends
+----
+
+[NOTE]
+====
+
+Für die Aktualisierung der Portal-Konfiguration sollte das _jar-Tool_
+aus der JDK verwendet werden.
+Um eine Konfigurationsdatei anzupassen, müssen folgende Schritt
+ausgeführt werden:
+
+*Linux-Betriebssystem:*
+
+  * Über die Konsole in das Verzeichnis _.deegree/portal-configuration_
+  navigieren
+  * Ausführen des Befehls (Entpacken der Konfiguration): _jar xvf
+  xplan-bplan-config.jar xplan-bplan-config/<Dateiname>_
+  * Entpackte-Datei mit einem beliebigen Editor bearbeiten
+  * Ausführen des Befehls (Einpacken der aktualisierten Konfiguration):
+  _jar uvf xplan-bplan-config.jar xplan-bplan-config/<Dateiname>_
+
+*Windows-Betriebssystem:*
+
+  * Über die Konsole in das Verzeichnis _.deegree/portal-configuration_
+  navigieren
+  * Ausführen des Befehls (Entpacken der Konfiguration):
+  _<Pfad-zur-JDK>/bin/jar.exe xvf xplan-bplan-config.jar
+  xplan-bplan-config/<Dateiname>_
+  * Entpackte-Datei mit einem beliebigen Editor bearbeiten
+  * Ausführen des Befehls (Einpacken der aktualisierten Konfiguration):
+  _<Pfad-zur-JDK>/bin/jar.exe uvf xplan-bplan-config.jar
+  xplan-bplan-config/<Dateiname>_
+====
+
+[[dropdown-menue-zum-wechseln]]
+==== Dropdown-Menü zum Wechseln der XPlanPortal-Komponenten anpassen
+
+Innerhalb der Planungs-Portale ist es möglich, mit einem Dropdown-Menü
+zwischen den einzelnen Portalen zu wechseln. Damit dies ausgeführt
+werden kann, muss die URL der einzelnen Portale in der Datei
+_dropDownList.xml_ angepasst werden. Diese Datei liegt im Gegensatz zu
+den vorherigen beschriebenen Konfigurationen im Ordner der jeweiligen
+XPlanPortal-Webkomponente __<tomcat>/webapps/<portal-portalname>__. :
+
+----
+<List>
+  <entry>
+    <label>Bebauungspläne</label>
+    <link>http://<host>:<port>/portal-bplan/</link>
+  </entry>
+  <entry>
+    <label>Flächennutzungspläne</label>
+    <link>http://<host>:<port>/portal-fplan/</link>
+  </entry>
+  <entry>
+    <label>Landschaftspläne</label>
+    <link>http://<host>:<port>/portal-lplan/</link>
+  </entry>
+</List>
+----
+
+=== Anwendung starten
+
+Zum Start des XPlanPortal muss der Applikationsserver gestartet werden. Zuvor muss sichergestellt sein, dass alle eingebundenen WMS-Dienste (insbesondere der XPlanWMS) verfügbar sind. Andernfalls kommt es zu Fehlern beim Starten des Applikationsservers für das XPlanPortal.
+
+=== Migration der Anwendung
+
+Bei einem Hostumzug, bei dem sich der Hostname des Servers auf dem die XPlanPortal-Komponenten laufen ändert, muss die URL angepasst werden, damit weiterhin ein Wechsel zwischen den XPlanPortal-Komponenten über die Dropdown Liste möglich ist. Hinweise dazu finden sich im Abschnitt <<dropdown-menue-zum-wechseln>>.

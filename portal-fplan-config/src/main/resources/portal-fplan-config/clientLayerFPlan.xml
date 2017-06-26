@@ -1,0 +1,427 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPlan">
+    <property name="aggregationId" value="fp_plan"/>
+    <property name="serverLayerId" value="fp_plan"/>
+    <property name="label" value="FP: Plan"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPBer">
+    <property name="aggregationId" value="fp_plan"/>
+    <property name="serverLayerId" value="fp_ber"/>
+    <property name="label" value="FP: Bereich"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPBebausfl">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_bebausfl"/>
+    <property name="label" value="FP: Bebauungsfläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPBahnverk">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_bahnverk"/>
+    <property name="label" value="FP: Bahnverkehr"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPStrverk">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_strverk"/>
+    <property name="label" value="FP: Straßenverkehr"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPKennz">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_kennz"/>
+    <property name="label" value="FP: Kennzeichnungsfläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPBsfl">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_bsfl"/>
+    <property name="label" value="FP: Bodenschätze"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPAufsch">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_aufschuettsfl"/>
+    <property name="label" value="FP: Aufschüttungsfläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPAbgrab">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_abgrabungsfl"/>
+    <property name="label" value="FP: Abgrabungsfläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPGew">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_gew"/>
+    <property name="label" value="FP: Gewässer"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPWald">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_waldfl"/>
+    <property name="label" value="FP: Waldfläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPGruen">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_gruen"/>
+    <property name="label" value="FP: Grünfläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPLwfl">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_lwfl"/>
+    <property name="label" value="FP: Landwirtschaftsfläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPZentr">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_zentrversber"/>
+    <property name="label" value="FP: Zentraler Versorgungsbereich"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPText">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_textabschn"/>
+    <property name="label" value="FP: Textabschnitt"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPAnpass">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_anpassklimaw"/>
+    <property name="label" value="FP: Anpassungen Klimawandel"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPGenobj">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_genobj"/>
+    <property name="label" value="FP: Generisches Objekt"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPFachg">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_fachgesetz"/>
+    <property name="label" value="FP: Fachgesetz"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPAusgl">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_ausgleichsfl"/>
+    <property name="label" value="FP: Ausgleichsfläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPVorb">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_vorbhws"/>
+    <property name="label" value="FP: Hochwasserschützfläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPWr">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_wr"/>
+    <property name="label" value="FP: Wasserrecht"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPWws">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_wws"/>
+    <property name="label" value="FP: Wasserwirtschaft"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPVere">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_verentsorgung"/>
+    <property name="label" value="FP: Ver- und Entsorgung"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPSchutz">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_schutzgeb"/>
+    <property name="label" value="FP: Schutzgebiet"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPSchpf">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_schutzpflentw"/>
+    <property name="label" value="FP: Schutz, Pflege und Entwicklung"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPGem">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_gembedarf"/>
+    <property name="label" value="FP: Gemeinbedarf"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPSpi">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_spispoanl"/>
+    <property name="label" value="FP: Spiel- und Sportanlagen"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPLuft">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_luftverk"/>
+    <property name="label" value="FP: Luftverkehr"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPDenk">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_denkmschens"/>
+    <property name="label" value="FP: Denkmalschutzensemble"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPErh">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_erhssatzung"/>
+    <property name="label" value="FP: Erhaltungssatzung"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPNutz">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_nutzbeschraenkfl"/>
+    <property name="label" value="FP: Nutzungsbeschränkungsfläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPRast">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_rasterplanaender"/>
+    <property name="label" value="FP: Rasterplanänderung"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPGrab">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_grabungsschutzgeb"/>
+    <property name="label" value="FP: Grabungsschutzgebiet"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPUnv">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_unverbindlvormerk"/>
+    <property name="label" value="FP: Unverbindliche Vormerkung"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPTextlD">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_textldarstfl"/>
+    <property name="label" value="FP: textliche Darstellungsfläche"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPLaerm">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_laermschutzber"/>
+    <property name="label" value="FP: Lärmschutzbereich"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPBausch">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_bauschutzber"/>
+    <property name="label" value="FP: Bauschutzbereich"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPKeine">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_keinezentrabwbesfl"/>
+    <property name="label" value="FP: Keine zentrale Abwasserbeseitigung"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPPriv">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_privvorh"/>
+    <property name="label" value="FP: Privilegiertes Vorhaben"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPVorbe">
+    <property name="aggregationId" value="fp_planfach"/>
+    <property name="serverLayerId" value="fp_vorbehaltefl"/>
+    <property name="label" value="FP: Vorbehalte"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPPTO">
+    <property name="aggregationId" value="fp_plansym"/>
+    <property name="serverLayerId" value="fp_xp_pto"/>
+    <property name="label" value="FP: Beschriftung Punkte"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPLTO">
+    <property name="aggregationId" value="fp_plansym"/>
+    <property name="serverLayerId" value="fp_xp_lto"/>
+    <property name="label" value="FP: Beschriftung Linien"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPBahnSym">
+    <property name="aggregationId" value="fp_plansym"/>
+    <property name="serverLayerId" value="fp_bahnverksym"/>
+    <property name="label" value="FP: Bahnverkehr Symbole"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPGemSym">
+    <property name="aggregationId" value="fp_plansym"/>
+    <property name="serverLayerId" value="fp_gembedarfsym"/>
+    <property name="label" value="FP: Gemeinbedarf Symbole"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPGewSym">
+    <property name="aggregationId" value="fp_plansym"/>
+    <property name="serverLayerId" value="fp_gewflsym"/>
+    <property name="label" value="FP: Gewässer Symbole"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPVorbhwSym">
+    <property name="aggregationId" value="fp_plansym"/>
+    <property name="serverLayerId" value="fp_vorbhwssym"/>
+    <property name="label" value="FP: Hochwasserschutz Symbole"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPWrSym">
+    <property name="aggregationId" value="fp_plansym"/>
+    <property name="serverLayerId" value="fp_wrsym"/>
+    <property name="label" value="FP: Wasserrecht Symbole"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPlwflSym">
+    <property name="aggregationId" value="fp_plansym"/>
+    <property name="serverLayerId" value="fp_lwflsym"/>
+    <property name="label" value="FP: Landwirtschaft Symbole"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPwssSym">
+    <property name="aggregationId" value="fp_plansym"/>
+    <property name="serverLayerId" value="fp_wsssym"/>
+    <property name="label" value="FP: Wasserwirtschaft Symbole"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPbsflSym">
+    <property name="aggregationId" value="fp_plansym"/>
+    <property name="serverLayerId" value="fp_bsflsym"/>
+    <property name="label" value="FP: Bodenschätze Symbole"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPAufschSym">
+    <property name="aggregationId" value="fp_plansym"/>
+    <property name="serverLayerId" value="fp_aufschuettsflsym"/>
+    <property name="label" value="FP: Aufschüttungsfläche Symbole"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPAbgrabSym">
+    <property name="aggregationId" value="fp_plansym"/>
+    <property name="serverLayerId" value="fp_abgrabungsflsym"/>
+    <property name="label" value="FP: Abgrabungsfläche Symbole"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPVereSym">
+    <property name="aggregationId" value="fp_plansym"/>
+    <property name="serverLayerId" value="fp_verentsorgungsym"/>
+    <property name="label" value="FP: Ver- und Entsorgung Symbole"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPWaldSym">
+    <property name="aggregationId" value="fp_plansym"/>
+    <property name="serverLayerId" value="fp_waldflsym"/>
+    <property name="label" value="FP: Wald Symbole"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPStrvSym">
+    <property name="aggregationId" value="fp_plansym"/>
+    <property name="serverLayerId" value="fp_strverksym"/>
+    <property name="label" value="FP: Straßenverkehr Symbole"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPDenkSym">
+    <property name="aggregationId" value="fp_plansym"/>
+    <property name="serverLayerId" value="fp_denkmschenssym"/>
+    <property name="label" value="FP: Denkmalschutzensemble Symbole"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPErhSym">
+    <property name="aggregationId" value="fp_plansym"/>
+    <property name="serverLayerId" value="fp_erhssatzungsym"/>
+    <property name="label" value="FP: Erhaltungssatzung Symbole"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPSchutzSym">
+    <property name="aggregationId" value="fp_plansym"/>
+    <property name="serverLayerId" value="fp_schutzgebsym"/>
+    <property name="label" value="FP: Schutzgebiet Symbole"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPSchpfSym">
+    <property name="aggregationId" value="fp_plansym"/>
+    <property name="serverLayerId" value="fp_schutzpflentwsym"/>
+    <property name="label" value="FP: Schutz, Pflege und Entwicklung Symbole"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+  <bean class="org.geomajas.configuration.client.ClientRasterLayerInfo" id="clientLayerFPGruenSym">
+    <property name="aggregationId" value="fp_plansym"/>
+    <property name="serverLayerId" value="fp_gruensym"/>
+    <property name="label" value="FP: Grünfläche Symbole"/>
+    <property name="visible" value="true"/>
+    <property name="style" value="1"/>
+  </bean>
+
+</beans>
+	

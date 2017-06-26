@@ -1,0 +1,39 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+  <bean name="vgrz" class="org.geomajas.layer.wms.WmsLayer">
+    <property name="layerInfo" ref="vgInfo"/>
+    <property name="baseWmsUrl" value="http://isk.geobasis-bb.de/ows/dnmvg.php?"/>
+    <property name="version" value="1.1.1"/>
+    <property name="format" value="image/png"/>
+    <property name="styles" value=""/>
+    <property name="enableFeatureInfoAsHtmlSupport" value="false"/>
+    <property name="enableFeatureInfoAsGmlSupport" value="false"/>
+    <property name="parameters">
+      <list>
+        <bean class="org.geomajas.configuration.Parameter">
+          <property name="name" value="TRANSPARENT"/>
+          <property name="value" value="true"/>
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <bean name="vgInfo" class="org.geomajas.configuration.RasterLayerInfo">
+    <property name="crs" value="EPSG:25833"/>
+    <property name="maxExtent">
+      <bean class="org.geomajas.geometry.Bbox">
+        <property name="x" value="233396"/>
+        <property name="y" value="5649843"/>
+        <property name="width" value="253181"/>
+        <property name="height" value="229183"/>
+      </bean>
+    </property>
+    <property name="dataSourceName" value="vgrz"/>
+    <property name="tileWidth" value="256"/>
+    <property name="tileHeight" value="256"/>
+  </bean>
+
+</beans>
