@@ -35,9 +35,6 @@
   <profiles>
     <profile>
       <id>include-test-config</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
       <dependencyManagement>
         <dependencies>
           <!-- internal -->
