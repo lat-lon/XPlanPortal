@@ -9,7 +9,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
         <bean class="org.geomajas.configuration.Parameter">
           <property name="name" value="WFSDataStoreFactory:GET_CAPABILITIES_URL"/>
           <property name="value"
-                    value="http://lkee.lat-lon.de/xplansyn-wfs/services/xplansearch?service=WFS&amp;VERSION=1.1.0&amp;request=GetCapabilities"/>
+                    value="http://localhost:8081/xplansyn-wfs/services/xplansearch?service=WFS&amp;VERSION=1.1.0&amp;request=GetCapabilities"/>
         </bean>
         <bean class="org.geomajas.configuration.Parameter">
           <property name="name" value="WFSDataStoreFactory:TIMEOUT"/>

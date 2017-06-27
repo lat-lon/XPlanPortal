@@ -7,7 +7,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
   <bean name="fp_plan" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPlanInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -39,7 +39,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_ber" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPberInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -71,7 +71,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_bebausfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPBebausflInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -104,7 +104,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
   <bean name="fp_bahnverk" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPBahnverkInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -136,7 +136,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_strverk" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPStrverkInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -168,7 +168,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_kennz" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPKennzInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -200,7 +200,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_bsfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPBsflInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -232,7 +232,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_aufschuettsfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPAufschInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -264,7 +264,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_abgrabungsfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPAbgrabInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -296,7 +296,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_gew" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPGewInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -328,7 +328,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_waldfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPWaldInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -360,7 +360,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_gruen" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPGruenInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -392,7 +392,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_lwfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPLwflInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -424,7 +424,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_zentrversber" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPZentrInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -456,7 +456,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_textabschn" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPTextInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -488,7 +488,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_anpassklimaw" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPAnpassInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -520,7 +520,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_genobj" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPGenobjInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -552,7 +552,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_fachgesetz" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPFachInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -584,7 +584,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_ausgleichsfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPAusglInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -616,7 +616,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_vorbhws" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPVorbInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -648,7 +648,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_wr" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPWrInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -680,7 +680,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_wws" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPWwsInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -712,7 +712,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_verentsorgung" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPVerInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -744,7 +744,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_schutzgeb" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPSchutzInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -776,7 +776,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_schutzpflentw" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPSchpfInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -808,7 +808,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_gembedarf" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPgemInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -840,7 +840,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_spispoanl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPSpiInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -872,7 +872,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_luftverk" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPLuftInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -904,7 +904,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_denkmschens" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPdenkInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -936,7 +936,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_erhssatzung" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPerhInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -968,7 +968,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_bauschutzber" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPbauschInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -1000,7 +1000,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_nutzbeschraenkfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPNutzInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -1032,7 +1032,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_rasterplanaender" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPRastInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -1064,7 +1064,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_grabungsschutzgeb" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPGrabInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -1096,7 +1096,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_unverbindlvormerk" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPUnvInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -1128,7 +1128,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_textldarstfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPtextlInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -1160,7 +1160,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_laermschutzber" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPLaermInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -1192,7 +1192,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_keinezentrabwbesfl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPKeineInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -1224,7 +1224,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_privvorh" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPPrivInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -1256,7 +1256,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_vorbehaltefl" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPVorbeInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -1288,7 +1288,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_xp_pto" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPPTOInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -1320,7 +1320,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_xp_lto" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPLTOInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -1354,7 +1354,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   <!-- Symbole -->
   <bean name="fp_bahnverksym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPbahnsymInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -1386,7 +1386,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_gembedarfsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPgemsymInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -1418,7 +1418,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_gewflsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPgewsymInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -1450,7 +1450,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_vorbhwssym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPvorbsymInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -1482,7 +1482,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_wrsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPwrsymInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -1514,7 +1514,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_lwflsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPlwflsymInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -1546,7 +1546,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_wsssym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPwsssymInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -1578,7 +1578,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_bsflsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPbsflsymInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -1610,7 +1610,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_aufschuettsflsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPaufschsymInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -1642,7 +1642,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_abgrabungsflsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPabgrabsymInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -1674,7 +1674,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_verentsorgungsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPverentsymInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -1706,7 +1706,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_waldflsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPwaldsymInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -1738,7 +1738,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_strverksym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPstrsymInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -1770,7 +1770,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_denkmschenssym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPdenksymInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -1802,7 +1802,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_erhssatzungsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPerhsymInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -1834,7 +1834,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_schutzgebsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPschutzsymInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -1866,7 +1866,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_schutzpflentwsym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPschpfsymInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
@@ -1898,7 +1898,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   </bean>
   <bean name="fp_gruensym" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsFPgruensymInfo"/>
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services?"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services?"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>

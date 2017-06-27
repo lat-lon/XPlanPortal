@@ -6,7 +6,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
   <bean name="lpraster" class="de.latlon.xplanung.layer.wms.XPlanWmsLayer">
     <property name="layerInfo" ref="layerWmsLPRasterInfo"/>
     <!-- When configuring your own applications, please do not use this WMS server -->
-    <property name="baseWmsUrl" value="http://lkee.lat-lon.de/xplan-wms/services/wms"/>
+    <property name="baseWmsUrl" value="http://localhost:8081/xplan-wms/services/wms"/>
     <property name="version" value="1.1.1"/>
     <property name="format" value="image/png"/>
     <property name="styles" value=""/>
