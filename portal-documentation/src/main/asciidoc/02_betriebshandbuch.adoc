@@ -81,7 +81,7 @@ Google Chrome: 40+
 [[Installation_Konfigurationsdateien]]
 ==== Konfigurationsdateien
 
-Die die Konfiguration enthaltenen __jar__-Archive müssen in das Verzeichnis _.deegree/portal-configuration_ im Home-Verzeichnis des Nutzers kopiert (aber nicht entpackt) werden:
+Die die Konfiguration enthaltenen __jar__-Archive müssen in ein beliebiges Verzeichnis kopiert (aber nicht entpackt) werden, empfohlen wird das Verzeichnis _.deegree/portal-configuration_ im Home-Verzeichnis des Nutzers:
 ______________________
 * _xplan-bplan-config_
 * _xplan-fplan-config_
@@ -110,34 +110,34 @@ Für die Konfiguration der oben genannten Punkte muss zunächst im
 Verzeichnis _<tomcat-root>/bin_ eine neue Datei mit dem Namen
 _setenv.sh_ angelegt werden.
 
-Für die Konfiguration der XPlanPortale werden die Verweise auf die
+Für die Konfiguration der XPlanPortal-Komponenten werden die Verweise auf die
 Konfigurations-JARs der Portale eingetragen, getrennt mit einem
 Doppelpunkt (__:__):
 
 ----
-CLASSPATH=<root>/.deegree/xplan-bplan-config-1.0.jar:<root>/.deegree/xplan-fplan-config-1.0.jar:<root>/.deegree/xplan-lplan-config-1.0.jar
+CLASSPATH=<USER_HOME>/.deegree/portal-bplan-config-1.0.jar:<USER_HOME>/.deegree/portal-fplan-config-1.0.jar:<USER_HOME>/.deegree/portal-lplan-config-1.0.jar
 ----
 
 NOTE: Es müssen ggf. Zeilenumbrüche entfernt werden.
 
 ===== Windows
 
-Für die Konfiguration der *XPlanPortale* wird im Verzeichnis
+Für die Konfiguration der XPlanPortal-Komponenten wird im Verzeichnis
 _<tomcat-root>/conf_ die Datei mit dem Namen _catalina.properties_
-angepasst. Der Verweis auf die Konfigurations-JARs der XPlanPortale muss
+angepasst. Der Verweis auf die Konfigurations-JARs muss
 unter _common.loader_ eingetragen werden, getrennt mit einem Komma
 (__,__). Die Tomcat eigenen JAR Dateien, müssen unbedingt beibehalten
 werden. :
 
 ----
-common.loader=C:\.deegree\xplan-bplan-config-1.0.jar;,C:\.deegree\xplan-fplan-config-1.0.jar;,C:\.deegree\xplan-lplan-config-1.0.jar;,$\{catalina.base}\lib,$\{catalina.base}\lib\__.jar,$\{catalina.home}\lib,$\{catalina.home}\lib\__.jar
+common.loader=C:\.deegree\portal-bplan-config-1.0.jar;,C:\.deegree\portal-fplan-config-1.0.jar;,C:\.deegree\portal-lplan-config-1.0.jar;,$\{catalina.base}\lib,$\{catalina.base}\lib\__.jar,$\{catalina.home}\lib,$\{catalina.home}\lib\__.jar
 ----
 
 === Konfiguration
 
-Alle Konfigurationsdateien der XPlanPortale liegen im _.deegree_ des
+Alle Konfigurationsdateien des XPlanPortal-Komponenten liegen im _.deegree_ des
 Benutzers und werden im Folgenden als _<portal-config-jar>_ benannt. Für
-die allgemeine Konfiguration der XPlanPortale wird außerdem auf die
+die allgemeine Konfiguration wird außerdem auf die
 geomajas Dokumentation (http://www.geomajas.org/geomajas/docs)
 verwiesen.
 

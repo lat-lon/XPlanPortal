@@ -1,9 +1,8 @@
 
 == Benutzerhandbuch
 
-
-Die Portalkomponenten der xPlanBox dienen als zentrale Anlaufstelle zur
-Information und Recherche der bereitgestellten Planwerke. Im Folgenden
+Das XPlanPortal dient als zentrale Anlaufstelle zur
+Information und Recherche von bereitgestellten Planwerke. Im Folgenden
 werden der Aufbau sowie die wesentlichen Funktionen erläutert.
 
 === Aufbau
