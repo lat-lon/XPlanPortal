@@ -9,3 +9,6 @@ Das XPlanPortal basiert auf den Komponenten des Open-Source-Projekts [Geomajas](
 
 ## Demo
 http://xplanbox.lat-lon.de
+
+## Download
+https://github.com/lat-lon/XPlanPortal/releases
